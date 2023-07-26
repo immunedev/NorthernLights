@@ -1,0 +1,212 @@
+@import "vars"
+
+html, body, #root
+    width: 100%
+    height: 100%
+    margin: 0
+
+body
+    font-family: 'Roboto Mono', sans-serif
+    font-size: 18px
+    color: #fff
+    background-color: $bg-page
+
+    -webkit-font-smoothing: antialiased
+
+.background-scene
+    position: fixed
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: $bg-page
+
+
+.logo-container
+    width: 100%
+    height: 15%
+    display: flex
+    align-content: center
+    justify-content: center
+    text-align: center
+
+.logo-text
+    text-align: center
+    font-family: Inter
+    font-size: 48px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    background: conic-gradient(from -3deg at 54.24% 50.00%, rgba(12, 237, 156, 0.90) 3deg, #0FA17E 56deg, #3077FF 155deg, #0075FF 186deg, rgba(41, 90, 183, 0.92) 327deg)
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.search-bar-container
+    width: 100%
+    height: 75px
+    display: flex
+    justify-content: center
+    align-content: center
+
+
+.search-bar
+    width: 80%
+    height: 100%
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-content: center
+    align-items: center
+    background: $secondary-color
+    border-radius: 20px
+
+
+.date-picker-form
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-content: center
+    text-align: center
+    background: $bg-page
+    border-radius: 15px
+    border-color: $outline-color
+    height: 40%
+    width: 20%
+    padding: 5px
+    margin: 10px
+    border: 1px solid $outline-color
+
+.date-text
+    color: #FFF
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    align-content: center
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    margin-left: -15%
+    
+
+
+.calender-icon
+    width: 22px
+    height: 22px
+    fill: $outline-color
+
+.icon-help
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    margin-right: -15%
+
+.icon-help-guest
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: -20%
+
+.down-arrow
+    padding: 3px
+    margin-left: 5px 
+
+.country-picker-form
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-content: center
+    text-align: center
+    background: $bg-page
+    border-radius: 15px
+    border-color: $outline-color
+    height: 40%
+    width: 10%
+    padding: 5px
+    margin: 10px
+    border: 1px solid $outline-color
+    
+.country-text
+    color: #FFF
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    align-content: center
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    margin-left: -10%
+
+.search-button
+    display: flex
+    justify-content: center
+    align-content: center
+    text-align: center
+    background: $accent-color
+    border-radius: 15px
+    border-color: $outline-color
+    height: 40%
+    width: 15%
+    padding: 5px
+    margin: 10px
+
+.button-text
+    color: #FFF
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    align-content: center
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+
+
+.content-container
+    width: 100%
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-content: center
+    margin-top: 2%
+
+.content-box
+    width: 80%
+    height: 100vh
+    overflow-y: auto
+    background-color: $secondary-color
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border-radius: 15px
+
+
+.content-card
+    width: 90%
+    background: $bg-card
+    height: 500px 
+    border-radius: 15px
+    margin-top: 30px
+    
+
+// .content-container::-webkit-scrollbar 
+//   width: 1px
+
+
+// .content-container::-webkit-scrollbar-thumb 
+//   background-color: #666
+//   border-radius: 4px
+
+
+
+
