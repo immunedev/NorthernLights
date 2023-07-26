@@ -5,7 +5,7 @@ import ContentContainer from './ContentContainer'
 
 function App() {
   return (
-    <div className='background-scene'>
+    <div>
       <Header></Header>
       <SearchBar></SearchBar>
       <ContentContainer></ContentContainer>
