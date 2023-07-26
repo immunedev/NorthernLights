@@ -10,6 +10,8 @@ export default function ContentContainer() {
             <ContentCard></ContentCard>
             <ContentCard></ContentCard>
             <ContentCard></ContentCard>
+            <ContentCard></ContentCard>
+            <ContentCard></ContentCard>
         </div>
     </div>
   )
