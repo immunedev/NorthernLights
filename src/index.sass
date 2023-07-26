@@ -181,6 +181,7 @@ body
     justify-content: center
     align-content: center
     margin-top: 2%
+    padding-bottom: 2%
 
 .content-box
     width: 80%
@@ -192,15 +193,116 @@ body
     justify-content: center
     align-items: center
     border-radius: 15px
+    gap: 50px
+    padding: 50px
+    padding-left: 50px
+    box-sizing: border-box
 
 
 .content-card
-    width: 90%
+    width: 100%
     background: $bg-card
     flex-shrink: 0
-    height: 500px 
+    height: 400px 
     border-radius: 15px
-    margin-top: 30px
+    padding: 40px
+    box-sizing: border-box
+    display: flex
+    flex-direction: row 
+
+
+.card-photo
+    width: 500px
+    height: 300px
+    background: $secondary-color
+    border-radius: 5px
+    display: flex
+    text-align: center
+    justify-content: center
+    align-items: center
+
+.card-texts
+    display: flex
+    flex-direction: column
+    width: 40%
+
+.card-main-text
+    color: #FFF
+    font-family: Inter
+    font-size: 32px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    padding-left: 40px !important
+    padding: 10px
+
+.card-sub-text
+    color: #FFF
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    padding-left: 40px 
+    letter-spacing: 0.5px
+
+.card-icons
+    display: flex
+    flex-direction: column
+    padding-top: 20px
+    
+
+.card-icon
+    display: flex
+    flex-direction: row
+    padding: 12px
+    padding-left: 35px
+    align-items: center
+    
+
+.card-icon-text
+    color: #FFF
+    font-family: Inter
+    font-size: 20px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    padding-left: 15px
+    align-items: center
+
+
+.button-container
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end 
+    position: relative
+    height: 100%
+    width: 30%
+
+
+.card-button
+    display: flex
+    background: $accent-color
+    border-radius: 15px
+    border-color: $outline-color
+    height: 10%
+    width: 70%
+    color: #FFF
+    align-items: center
+    justify-content: center
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    margin-bottom: 20px 
+    margin-right: 20px 
+    position: absolute
+
+    
+
+    
+    
     
 
 // .content-container::-webkit-scrollbar 
