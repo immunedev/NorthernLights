@@ -8,10 +8,10 @@ function App() {
   return (
     <div>
       <Header></Header>
-      {/* <SearchBar></SearchBar> */}
-      {/* tymczasowo commented do momentu stworzenia TripPage */}
-      {/* <ContentContainer></ContentContainer> */}
-      <TripPage></TripPage>
+      <SearchBar></SearchBar>
+      <ContentContainer></ContentContainer>
+      {/* tymczasowo commented do momentu napisania przejscia do podstrony */}
+      {/* <TripPage></TripPage> */}
     </div>
   )
 }
