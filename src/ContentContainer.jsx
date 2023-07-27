@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import ContentCard from './ContentCard'
 
 
-export default function ContentContainer() {
+export default function ContentContainer({ onTripSelect }) {
   const data = {
     "trips": [
       {
@@ -45,7 +45,8 @@ export default function ContentContainer() {
     <div className='content-container'>
         <div className="content-box" >
           {data.trips.map((trip) => (
-            <ContentCard key={trip.id} data={trip} />
+            <ContentCard key={trip.id} data={trip} onTripSelect={onTripSelect}/>
+            
           ))}
         </div>
     </div>

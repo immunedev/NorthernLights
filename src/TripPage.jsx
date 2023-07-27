@@ -2,28 +2,33 @@ import React from "react";
 import { ReactComponent as LocationIcon } from "./assets/location.svg";
 import { ReactComponent as DateIcon } from "./assets/date.svg";
 import { ReactComponent as PriceIcon } from "./assets/price.svg";
+import { ReactComponent as BackIcon } from "./assets/backarrow.svg";
 
 
-export default function TripPage(data){
+export default function TripPage({tripData, onBackClick }){
     return(
         <div className="trip-container">
             <div className="trip-box">
-                <div className="trip-photo">img</div>
+                <div className="trip-photo">
+                    <button onClick={onBackClick} className="back-button">
+                        <BackIcon className='back-arrow'></BackIcon>                    
+                    </button>
+                </div>
                 <div className="trip-rows">
                     <div className="trip-left-col">
-                        <div className="trip-title">Lorem Ipsum</div>
+                        <div className="trip-title">{tripData.title}</div>
                         <div className="trip-icons">
                             <div className="trip-cell">
                                 <LocationIcon></LocationIcon>
-                                <div className="trip-cell-text">Norway, Tromso</div>
+                                <div className="trip-cell-text">{tripData.location}</div>
                             </div>
                             <div className="trip-cell">
                                 <DateIcon></DateIcon>
-                                <div className="trip-cell-text">7 days</div>
+                                <div className="trip-cell-text">{tripData.length}</div>
                             </div>
                             <div className="trip-cell">
                                 <PriceIcon></PriceIcon>
-                                <div className="trip-cell-text">5000 PLN</div>
+                                <div className="trip-cell-text">{tripData.price}</div>
                             </div>
                         </div>
                         <div className="trip-desc-subtitle">Opis wycieczki</div>

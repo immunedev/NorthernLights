@@ -84,7 +84,7 @@ body
     cursor: pointer
 
 .guest-menu
-    height: 100px
+    height: 110px
     width: 100%
     background-color: $secondary-color
     border: 1px solid $outline-color
@@ -125,13 +125,15 @@ body
     flex-direction: row
     width: 100%
     justify-content: space-between
+    align-content: center
+    align-items: center
     padding: 5px
 
 .guest-menu-type
     color: #FFF
     text-align: center
     font-family: Inter
-    font-size: 16px
+    font-size: 20px
     font-style: normal
     font-weight: 400
     line-height: normal
@@ -145,23 +147,50 @@ body
     font-style: normal
     font-weight: 400
     line-height: normal
+    padding-left: 5px
+    padding-right: 5px
+    
+
+.guest-buttons
+    display: flex
+    flex-direction: row
+    align-content: center
+    align-items: center
+    justify-content: center
+    padding: 5px
+
     
 .guest-menu-button-plus
     height: 25px
     width: 25px
-    background-color: #fff
+    display: flex
+    align-content: center
+    align-items: center
+    justify-content: center
+    background-color: $accent-color
     border-radius: 100%
-    margin-right: -20%
+    margin-right: 10px
+    margin-left: 30px
+    border: none
 
 .guest-menu-button-minus
     height: 25px
     width: 25px
+    display: flex
+    align-content: center
+    align-items: center
+    justify-content: center
     background-color: #fff
     border-radius: 100%
+    margin-right: 10px
+    border: none
 
 .minus-icon
     height: 15px
     width: 15px
+
+.plus-icon
+    fill: #fff
     
 
     
@@ -653,7 +682,13 @@ body
     background: #888181
     color: $accent-color
 
-    
+.back-button
+    padding: 25px
+    background-color: transparent
+    border: none
+
+.back-arrow
+    background: transparent
 
 
 

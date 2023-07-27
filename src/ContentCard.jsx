@@ -4,7 +4,12 @@ import { ReactComponent as DateIcon } from "./assets/date.svg";
 import { ReactComponent as PriceIcon } from "./assets/price.svg";
 
 
-export default function ContentCard({data}) {
+export default function ContentCard({ data, onTripSelect }) {
+
+  const handleButtonClick = () => {
+    onTripSelect(data); // Pass the selected trip data to the onTripSelect function
+  };
+
   return (
     <div className='content-card'>
         <div className='card-photo'>
@@ -32,7 +37,7 @@ export default function ContentCard({data}) {
         </div>
 
         <div className='button-container'>
-          <div className='card-button'>Check trip</div>
+          <div onClick={handleButtonClick} className='card-button'>Check trip</div>
         </div>
     </div>
   )

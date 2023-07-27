@@ -1,19 +1,30 @@
-import React from 'react'
-import Header from './Header'
-import SearchBar from './SearchBar'
-import ContentContainer from './ContentContainer'
-import TripPage from './TripPage'
+import React, { useState } from 'react';
+import Header from './Header';
+import SearchBar from './SearchBar';
+import ContentContainer from './ContentContainer';
+import TripPage from './TripPage';
 
-function App() {
+export default function App() {
+  const [selectedTrip, setSelectedTrip] = useState(null);
+
+  const handleTripSelect = (tripData) => {
+    setSelectedTrip(tripData);
+  };
+
+  const handleBackToContent = () => {
+    setSelectedTrip(null);
+  };
+
+
   return (
     <div>
-      <Header></Header>
-      <SearchBar></SearchBar>
-      <ContentContainer></ContentContainer>
-      {/* tymczasowo commented do momentu napisania przejscia do podstrony */}
-      {/* <TripPage></TripPage> */}
+      <Header />
+      <SearchBar />
+      {selectedTrip ? (
+        <TripPage tripData={selectedTrip} onBackClick={handleBackToContent}/>
+      ) : (
+        <ContentContainer onTripSelect={handleTripSelect} />
+      )}
     </div>
-  )
+  );
 }
-
-export default App
