@@ -5,7 +5,7 @@ import { ReactComponent as PriceIcon } from "./assets/price.svg";
 import { ReactComponent as BackIcon } from "./assets/backarrow.svg";
 
 
-export default function TripPage({tripData, onBackClick }){
+export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
     return(
         <div className="trip-container">
             <div className="trip-box">
@@ -64,7 +64,7 @@ export default function TripPage({tripData, onBackClick }){
                             <div className="trip-grid-element-5">p</div>
                             <div className="trip-grid-element-6">p</div>
                         </div>
-                        <div className="trip-button">Book the trip</div>
+                        <div onClick={onShowFinalPage} className="trip-button">Book the trip</div>
                     </div>
                 </div>
             </div>
