@@ -4,7 +4,8 @@ import { ReactComponent as DateIcon } from "./assets/date.svg";
 import { ReactComponent as PriceIcon } from "./assets/price.svg";
 import { ReactComponent as BackIcon } from "./assets/backarrow.svg";
 
-export default function FinalPage({ onBackClick }){
+export default function FinalPage({ tripData, onBackClick }){
+
     return(
         <div className="final-page-container">
             <div className="final-page-box">
@@ -32,19 +33,19 @@ export default function FinalPage({ onBackClick }){
                     <div className='card-icons-summary'>
                         <div className='card-icon-summary'>
                           <LocationIcon></LocationIcon>
-                          <div className='card-icon-text-summary'>test</div>
+                          <div className='card-icon-text-summary'>{tripData.location}</div>
                         </div>
                         <div className='card-icon-summary'>
                           <DateIcon></DateIcon>
-                          <div className='card-icon-text-summary'>test</div>
+                          <div className='card-icon-text-summary'>{tripData.length}</div>
                         </div>
                         <div className='card-icon-summary'>
                           <PriceIcon></PriceIcon>
-                          <div className='card-icon-text-summary'>test</div>
+                          <div className='card-icon-text-summary'>{tripData.price}</div>
                         </div>
                     </div>
                     <div className="price-summary-div">
-                        <div className="price-summary">Total: 2137 USD</div>
+                        <div className="price-summary">Total: {tripData.price}</div>
                     </div>
                     <div className="price-summary-button-div">
                         <div className="button-summary">Pay</div>

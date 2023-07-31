@@ -6,6 +6,8 @@ import { ReactComponent as BackIcon } from "./assets/backarrow.svg";
 
 
 export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
+
+
     return(
         <div className="trip-container">
             <div className="trip-box">

@@ -20,17 +20,16 @@ export default function App() {
   };
 
   const handleShowFinalPage = () => {
-    setShowFinalPage(true);
-    setSelectedTrip(null); // Reset selectedTrip to null when showing the FinalPage
+    setShowFinalPage(true); 
   };
-
-
 
   return (
     <div>
       <Header />
       {showFinalPage ? (
-        <FinalPage onBackClick={handleBackToContent} />
+        <FinalPage 
+        tripData={selectedTrip}
+        onBackClick={handleBackToContent} />
       ) : (
         <>
           <SearchBar />
