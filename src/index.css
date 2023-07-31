@@ -958,4 +958,69 @@ input[type=date] {
   align-content: center;
   justify-content: flex-start;
   margin-left: -20%;
+}
+
+/* Add blurred effect when the popup is open */
+.final-page-container.blurred .final-page-box {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background-color: #242424;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.popup-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.popup button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #3077ff;
+  border-radius: 15px;
+}
+
+.button-summary.inactive {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.countdown {
+  color: rgba(124, 124, 124, 0.6039215686);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }/*# sourceMappingURL=index.css.map */
