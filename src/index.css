@@ -917,4 +917,45 @@ input[type=text]:focus {
 
 .button-summary:active {
   filter: brightness(0.6);
+}
+
+.date-form-component {
+  display: inline;
+}
+
+.date-picker-form {
+  position: relative;
+}
+
+.date-text {
+  color: #888;
+  font-style: italic;
+}
+
+.country-text {
+  color: #888;
+  font-style: italic;
+}
+
+input[type=date] {
+  color: #888;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #242424;
+  border: none;
+}
+
+.icon-help {
+  cursor: pointer;
+}
+
+.date-div {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  margin-left: -20%;
 }/*# sourceMappingURL=index.css.map */
