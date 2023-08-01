@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ReactComponent as ProfileIcon } from "./assets/profile.svg";
 import { ReactComponent as DownArrow } from "./assets/downarrow.svg";
 
 export default function CountryForm({ placeholder }) {

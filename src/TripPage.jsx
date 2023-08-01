@@ -21,15 +21,15 @@ export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
                         <div className="trip-title">{tripData.title}</div>
                         <div className="trip-icons">
                             <div className="trip-cell">
-                                <LocationIcon></LocationIcon>
+                                <LocationIcon className='card-svg'></LocationIcon>
                                 <div className="trip-cell-text">{tripData.location}</div>
                             </div>
                             <div className="trip-cell">
-                                <DateIcon></DateIcon>
+                                <DateIcon className='card-svg'></DateIcon>
                                 <div className="trip-cell-text">{tripData.length}</div>
                             </div>
                             <div className="trip-cell">
-                                <PriceIcon></PriceIcon>
+                                <PriceIcon className='card-svg'></PriceIcon>
                                 <div className="trip-cell-text">{tripData.price}</div>
                             </div>
                         </div>

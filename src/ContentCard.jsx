@@ -22,15 +22,15 @@ export default function ContentCard({ data, onTripSelect }) {
 
           <div className='card-icons'>
             <div className='card-icon'>
-              <LocationIcon></LocationIcon>
+              <LocationIcon className='card-svg'></LocationIcon>
               <div className='card-icon-text'>{data.location}</div>
             </div>
             <div className='card-icon'>
-              <DateIcon></DateIcon>
+              <DateIcon className='card-svg'></DateIcon>
               <div className='card-icon-text'>{data.length}</div>
             </div>
             <div className='card-icon'>
-              <PriceIcon></PriceIcon>
+              <PriceIcon className='card-svg'></PriceIcon>
               <div className='card-icon-text'>{data.price}</div>
             </div>
           </div>
