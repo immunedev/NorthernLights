@@ -3,6 +3,10 @@ import { ReactComponent as LocationIcon } from "./assets/location.svg";
 import { ReactComponent as DateIcon } from "./assets/date.svg";
 import { ReactComponent as PriceIcon } from "./assets/price.svg";
 import { ReactComponent as BackIcon } from "./assets/backarrow.svg";
+import { ReactComponent as PolandFlag } from "./assets/polandflag.svg";
+import { ReactComponent as NorwayFlag } from "./assets/norwayflag.svg";
+import { ReactComponent as HotelIcon } from "./assets/hotel.svg";
+import { ReactComponent as TripIcon } from "./assets/trip.svg";
 
 export default function FinalPage({ tripData, onBackClick }) {
   const [showPopup, setShowPopup] = useState(false);
@@ -66,18 +70,109 @@ export default function FinalPage({ tripData, onBackClick }) {
   return (
     <div className={`final-page-container ${showPopup ? "blurred" : ""}`}>
       <div className="final-page-box">
-        <div className="final-page-content">
-          <div className="final-page-forms">
-            
+        <form className="final-page-left" id='test'>
 
-
-
-
+          <div className="final-page-form-cell">
+            <label className="form-label">Name</label>
+            <input
+                type="text"
+                className="text-input"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+            />
           </div>
+
+          <div className="final-page-form-cell">
+            <label className="form-label">Surname</label>
+            <input
+                type="text"
+                className="text-input"
+                name="surname"
+                value={formData.surname}
+                onChange={handleInputChange}
+            />
+          </div>
+
+          <div className="final-page-form-cell">
+            <label className="form-label">Phone</label>
+            <input
+                type="phone"
+                className="text-input"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+            />
+          </div>
+
+          <div className="final-page-form-cell">
+            <label className="form-label">E-mail</label>
+            <input
+                type="email"
+                className="text-input"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+            />
+          </div>
+
+          <div className="final-page-form-cell">
+          <label className="form-label">Special wish</label>
+            <input
+                type="text"
+                className="text-input-special"
+                name="specialWish"
+                value={formData.specialWish}
+                onChange={handleInputChange}
+            />
+          </div>
+        </form>
+        <div className="final-page-right"> 
+          <h1 className="final-h1">Summary</h1>
+          <div className="final-flight-row">
+            <div className="final-flight-cell">
+              <PolandFlag className='flag'></PolandFlag>
+              <h2 className="destination">Pol to Nor</h2>
+            </div>
+            <div className="final-flight-cell">
+              <h2 className="destination">25.07.2023</h2>
+            </div>
+          </div>
+          <h3 className="details">2 x Adults, Baggage included</h3>
+          <div className="divide-line"></div>
+          <div className="final-flight-row">
+            <div className="final-flight-cell">
+              <NorwayFlag className='flag'></NorwayFlag>
+              <h2 className="destination">Nor to Pol</h2>
+            </div>
+            <div className="final-flight-cell">
+              <h2 className="destination">7.08.2023</h2>
+            </div>
+          </div>
+          <h3 className="details">2 x Adults, Baggage included</h3>
+          <div className="divide-line"></div>
+          <div className="final-icon-cell">
+            <HotelIcon className='icon'></HotelIcon>
+            <h2 className="icon-text">Hilton Oslo, Superior room, 13 nights</h2>
+          </div>
+          <div className="final-icon-cell">
+            <TripIcon className='icon'></TripIcon>
+            <h2 className="icon-text">Aurora lights in norwegian fyords</h2>
+          </div>
+          <div className="final-icon-cell">
+            <PriceIcon className='icon'></PriceIcon>
+            <h2 className="icon-text">1299$</h2>
+          </div>
+          <button 
+            className={`button-summary ${formValid ? "" : "inactive"}`}
+            onClick={formValid ? handlePayClick : undefined}
+            form='test'
+            type='submit'>
+                Pay
+          </button>
         </div>
       </div>
 
-      {/* Popup */}
       {showPopup && (
         <div className="popup">
           <div className="popup-content">
@@ -92,8 +187,6 @@ export default function FinalPage({ tripData, onBackClick }) {
         </div>
       )}
 
-
-      {/* Thank you Popup */}
       {thankYouPopup && (
           <div className="popup">
             <div className="popup-content">
@@ -104,7 +197,14 @@ export default function FinalPage({ tripData, onBackClick }) {
           </div>
         )}
 
-        
+
+
+
     </div>
+
+
+
+        
+    
   );
 }
