@@ -77,7 +77,7 @@ export default function FinalPage({ tripData, onBackClick }) {
 
   return (
     <div className={`final-page-container ${showPopup ? "blurred" : ""}`}>
-      <BackIcon className="back-arrow" onClick={onBackClick}/>
+      {/* <BackIcon className="back-arrow" onClick={onBackClick}/> */}
       <div className="final-page-box">
         <form className="final-page-left" id='test'>
 
