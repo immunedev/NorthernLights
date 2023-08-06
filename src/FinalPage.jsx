@@ -54,8 +54,16 @@ export default function FinalPage({ tripData, onBackClick }) {
  
   const validateForm = () => {
     const { name, surname, email, phone } = formData;
+  
     const isFormValid = name !== "" && surname !== "" && email !== "" && phone !== "";
-    setFormValid(isFormValid);
+  
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmailValid = emailPattern.test(email);
+  
+    const phonePattern = /^[0-9]+$/;
+    const isPhoneValid = phonePattern.test(phone) && phone.length >= 7; 
+  
+    setFormValid(isFormValid && isEmailValid && isPhoneValid);
   };
 
   const handlePayClick = () => {
@@ -69,6 +77,7 @@ export default function FinalPage({ tripData, onBackClick }) {
 
   return (
     <div className={`final-page-container ${showPopup ? "blurred" : ""}`}>
+      <BackIcon className="back-arrow" onClick={onBackClick}/>
       <div className="final-page-box">
         <form className="final-page-left" id='test'>
 

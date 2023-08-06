@@ -68,6 +68,8 @@ body {
 }
 
 .date-picker-form {
+  position: relative;
+  float: left;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -83,6 +85,55 @@ body {
   border: 1px solid #636363;
   position: relative;
   cursor: pointer;
+}
+
+.input-date {
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  width: 250px;
+}
+
+.input-date:focus,
+input[type=date]:focus {
+  border: none;
+  outline: none;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  background: none;
+}
+
+.open-button {
+  position: absolute;
+  top: 10px;
+  right: 11px;
+  width: 25px;
+  height: 25px;
+  background: none;
+  pointer-events: none;
+}
+
+.open-button button {
+  border: none;
+  background: transparent;
+}
+
+.date-div {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .guest-picker-form {
@@ -229,7 +280,8 @@ body {
   width: 22px;
   height: 22px;
   fill: #636363;
-  padding: 10px;
+  margin-left: -5px;
+  margin-top: -2px;
 }
 
 .guest-icon {
@@ -746,6 +798,10 @@ body {
 
 .back-arrow {
   background: transparent;
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
 }
 
 .final-page-container {
@@ -994,17 +1050,6 @@ body {
   font-style: italic;
 }
 
-input[type=date] {
-  color: #fff;
-  font-style: italic;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  background-color: #242424;
-  border: none;
-}
-
 .icon-help {
   cursor: pointer;
 }
@@ -1142,6 +1187,17 @@ input[type=date] {
   }
   .card-button {
     position: absolute;
+  }
+  .final-page-box {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  .button-summary {
+    margin-top: 30px;
   }
 }
 @media (max-width: 400px) {
@@ -1305,5 +1361,40 @@ input[type=date] {
   }
   .content-box {
     background-color: transparent;
+  }
+  .final-page-box {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: transparent;
+  }
+  .final-page-left {
+    width: 200px;
+  }
+  .final-page-right {
+    width: 250px;
+  }
+  .final-h1 {
+    text-align: center;
+  }
+  .destination {
+    font-size: 12px;
+  }
+  .flag {
+    width: 24px;
+    height: 24px;
+  }
+  .details {
+    font-size: 10px;
+    margin-left: 45px;
+  }
+  .icon-text {
+    font-size: 12px;
+  }
+  .button-summary {
+    margin-top: 30px;
   }
 }/*# sourceMappingURL=index.css.map */

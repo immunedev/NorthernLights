@@ -1,77 +1,59 @@
-<button onClick={onBackClick} className="back-button">
-          <BackIcon className="back-arrow" />
-        </button>
-        <div className="final-page-left-col">
-          {/* <div className="final-page-title">Contact information</div> */}
-          <div className="final-page-subtitle final-page-subtitle-left">Name</div>
-          <input
-            type="text"
-            className="text-input"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-          />
-          <div className="final-page-subtitle final-page-subtitle-left">Surname</div>
-          <input
-            type="text"
-            className="text-input"
-            name="surname"
-            value={formData.surname}
-            onChange={handleInputChange}
-          />
-          <div className="final-page-subtitle final-page-subtitle-left">E-mail</div>
-          <input
-            type="text"
-            className="text-input"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-          <div className="final-page-subtitle final-page-subtitle-left">Phone</div>
-          <input
-            type="text"
-            className="text-input"
-            name="phone"
-            value={formData.phone}
-            onChange={handleInputChange}
-          />
-          <div className="final-page-subtitle final-page-subtitle-left">Special wish</div>
-          <input
-            type="text"
-            className="text-input"
-            name="specialWish"
-            value={formData.specialWish}
-            onChange={handleInputChange}
-          />
+import React, { useState, useRef, useEffect } from "react";
+import { ReactComponent as CalenderIcon } from "./assets/calender.svg";
+
+export default function DateForm({ placeholder }) {
+  const [startDate, setStartDate] = useState(null);
+  const [isDatePickerOpen, setDatePickerOpen] = useState(false);
+  const datePickerRef = useRef(null);
+
+  const handleIconClick = () => {
+    setDatePickerOpen(true);
+  };
+
+  const handleDateChange = (event) => {
+   
+    const selectedDate = event.target.value;
+
+  
+    setStartDate(selectedDate);
+    setDatePickerOpen(false);
+  };
+
+  const handleFormClick = () => {
+    setDatePickerOpen(true);
+  };
+
+  
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (datePickerRef.current && !datePickerRef.current.contains(event.target)) {
+        setDatePickerOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [datePickerRef]);
+
+  const handlePlaceholder = () => {
+    return startDate ? startDate : placeholder;
+  };
+
+  return (
+    <div className="date-picker-form" onClick={handleFormClick}>
+      <div className="date-text" onClick={handleFormClick}>
+        {handlePlaceholder()}
+      </div>
+      {isDatePickerOpen && (
+        <div ref={datePickerRef}>
+          <input type="date" value={startDate || ""} onChange={handleDateChange} />
         </div>
-        <div className="final-page-right-col">
-          <div className="final-page-title">Summary</div>
-          <div className="photo-div">
-            <div className="summary-photo">Test</div>
-          </div>
-          <div className="card-icons-summary">
-            <div className="card-icon-summary">
-              <LocationIcon />
-              <div className="card-icon-text-summary">{tripData.location}</div>
-            </div>
-            <div className="card-icon-summary">
-              <DateIcon />
-              <div className="card-icon-text-summary">{tripData.length}</div>
-            </div>
-            {/* <div className="card-icon-summary">
-              <PriceIcon />
-              <div className="card-icon-text-summary">{tripData.price}</div>
-            </div> */}
-          </div>
-          <div className="price-summary-div">
-            <div className="price-summary">Total: {tripData.price}</div>
-          </div>
-          <div className="price-summary-button-div">
-            <div
-              className={`button-summary ${formValid ? "" : "inactive"}`}
-              onClick={formValid ? handlePayClick : undefined}
-            >
-              Pay
-            </div>
-          </div>
-        </div>
+      )}
+      <div className="icon-help">
+        <CalenderIcon className="calender-icon" onClick={handleIconClick} />
+      </div>
+    </div>
+  );
+}
