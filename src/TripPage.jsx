@@ -59,12 +59,12 @@ export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
                     <div className="trip-right-col">
                         <div className="trip-grid-large-photo">Test</div>
                         <div className="trip-grid">
-                            <div className="trip-grid-element-1">p</div>
-                            <div className="trip-grid-element-2">p</div>
-                            <div className="trip-grid-element-3">p</div>
-                            <div className="trip-grid-element-4">p</div>
-                            <div className="trip-grid-element-5">p</div>
-                            <div className="trip-grid-element-6">p</div>
+                            <div className="trip-grid-element">p</div>
+                            <div className="trip-grid-element">p</div>
+                            <div className="trip-grid-element">p</div>
+                            <div className="trip-grid-element">p</div>
+                            <div className="trip-grid-element">p</div>
+                            <div className="trip-grid-element">p</div>
                         </div>
                         <div onClick={onShowFinalPage} className="trip-button">Book the trip</div>
                     </div>

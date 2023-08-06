@@ -55,7 +55,6 @@ body {
 
 .search-bar {
   width: 80%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -547,9 +546,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .button-container {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
-  position: relative;
-  padding-left: 40px;
+  align-items: center;
+  padding-left: 35px;
   margin-top: 20px;
 }
 
@@ -559,7 +557,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   border-radius: 15px;
   border-color: #636363;
   height: 40px;
-  width: 300px;
+  width: 100vw;
   color: #FFF;
   align-items: center;
   justify-content: center;
@@ -720,57 +718,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
   padding: 20px;
 }
 
-.trip-grid-element-1 {
-  grid-area: 1/1/2/2;
+.trip-grid-element {
   background-color: rgba(133, 132, 132, 0.031372549);
   padding: 15px;
   border-radius: 10px;
-  width: 100px;
-  height: 75px;
-}
-
-.trip-grid-element-2 {
-  grid-area: 1/2/2/3;
-  background-color: rgba(133, 132, 132, 0.031372549);
-  padding: 15px;
-  border-radius: 10px;
-  width: 100px;
-  height: 75px;
-}
-
-.trip-grid-element-3 {
-  grid-area: 1/3/2/4;
-  background-color: rgba(133, 132, 132, 0.031372549);
-  padding: 15px;
-  border-radius: 10px;
-  width: 100px;
-  height: 75px;
-}
-
-.trip-grid-element-4 {
-  grid-area: 2/1/3/2;
-  background-color: rgba(133, 132, 132, 0.031372549);
-  padding: 15px;
-  border-radius: 10px;
-  width: 100px;
-  height: 75px;
-}
-
-.trip-grid-element-5 {
-  grid-area: 2/2/3/3;
-  background-color: rgba(133, 132, 132, 0.031372549);
-  padding: 15px;
-  border-radius: 10px;
-  width: 100px;
-  height: 75px;
-}
-
-.trip-grid-element-6 {
-  grid-area: 2/3/3/4;
-  background-color: rgba(133, 132, 132, 0.031372549);
-  padding: 15px;
-  border-radius: 10px;
-  width: 100px;
   height: 75px;
 }
 
@@ -1161,6 +1112,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
   .final-page-right-col {
     width: 500px;
   }
+  .search-bar {
+    flex-direction: column;
+  }
 }
 @media (max-width: 900px) {
   .search-bar {
@@ -1168,6 +1122,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
   }
 }
 @media (max-width: 1350px) {
+  .card-button {
+    width: 300px;
+  }
   .content-card {
     flex-direction: column;
     height: 600px;
@@ -1424,6 +1381,19 @@ input[type=date]::-webkit-calendar-picker-indicator {
     margin-top: 30px;
   }
   .button-container {
-    width: 100px;
+    width: 200px;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  .trip-icons {
+    padding-left: 30px;
+    gap: 20px;
+  }
+  .trip-desc-list {
+    padding-left: 30px;
+  }
+  .trip-grid-element {
+    height: 50px;
   }
 }/*# sourceMappingURL=index.css.map */
