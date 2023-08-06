@@ -180,6 +180,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
   align-items: center;
   border: 1px solid #636363;
   border-radius: 15px;
+  background: #2c2d2e;
+  position: relative;
+  z-index: 1;
 }
 
 .guest-menu-content-row {
@@ -200,7 +203,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-left: 10%;
 }
 
 .guest-menu-number {
@@ -544,9 +546,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-end;
   position: relative;
+  padding-left: 40px;
+  margin-top: 20px;
 }
 
 .card-button {
@@ -564,9 +568,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  position: relative;
+  border: none;
 }
 
 .card-button:hover {
@@ -628,17 +630,18 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .trip-icons {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   padding: 20px;
+  padding-left: 60px;
   padding-top: 0;
-  padding-bot: 30px;
+  padding-bottom: 30px;
+  gap: 50px;
 }
 
 .trip-cell {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 5px;
 }
 
 .trip-cell-text {
@@ -673,6 +676,17 @@ input[type=date]::-webkit-calendar-picker-indicator {
   padding-left: 60px;
 }
 
+.trip-desc-list {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 10px;
+  padding-left: 60px;
+}
+
 .trip-list {
   padding-left: 20px;
   padding-top: 0;
@@ -680,6 +694,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .trip-list-element {
   padding-bottom: 10px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .trip-right-col {
@@ -1199,6 +1218,13 @@ input[type=date]::-webkit-calendar-picker-indicator {
   .button-summary {
     margin-top: 30px;
   }
+  .trip-list-element {
+    font-size: 14px;
+  }
+  .button-container {
+    margin-top: 55px;
+    padding-left: 35px;
+  }
 }
 @media (max-width: 400px) {
   .trip-rows {
@@ -1396,5 +1422,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
   }
   .button-summary {
     margin-top: 30px;
+  }
+  .button-container {
+    width: 100px;
   }
 }/*# sourceMappingURL=index.css.map */

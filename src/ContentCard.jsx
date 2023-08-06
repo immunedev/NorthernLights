@@ -17,27 +17,28 @@ export default function ContentCard({ data, onTripSelect }) {
         </div>
         <div className='card-texts'>
           <div className='card-main-text'>{data.title}</div>
-
           <div className='card-sub-text'>{data.subtitle}</div>
+          
+          <div >
+            <div className='card-icons'>
+              <div className='card-icon'>
+                <LocationIcon className='card-svg'></LocationIcon>
+                <div className='card-icon-text'>{data.location}</div>
+              </div>
+              <div className='card-icon'>
+                <DateIcon className='card-svg'></DateIcon>
+                <div className='card-icon-text'>{data.length}</div>
+              </div>
+              <div className='card-icon'>
+                <PriceIcon className='card-svg'></PriceIcon>
+                <div className='card-icon-text'>{data.price}</div>
+              </div>
+            </div>
+            </div>
 
-          <div className='card-icons'>
-            <div className='card-icon'>
-              <LocationIcon className='card-svg'></LocationIcon>
-              <div className='card-icon-text'>{data.location}</div>
+            <div className='button-container'>
+              <button onClick={handleButtonClick} className='card-button'>Check trip</button>
             </div>
-            <div className='card-icon'>
-              <DateIcon className='card-svg'></DateIcon>
-              <div className='card-icon-text'>{data.length}</div>
-            </div>
-            <div className='card-icon'>
-              <PriceIcon className='card-svg'></PriceIcon>
-              <div className='card-icon-text'>{data.price}</div>
-            </div>
-          </div>
-        </div>
-
-        <div className='button-container'>
-          <div onClick={handleButtonClick} className='card-button'>Check trip</div>
         </div>
     </div>
   )

@@ -42,7 +42,7 @@ export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
                         </div>
 
                         <div className="trip-desc-subtitle">Co zabrać</div>
-                        <div className="trip-desc">
+                        <div className="trip-desc-list">
                             <ul className="trip-list">
                                 <li className="trip-list-element">Ważny dokument tożsamości ( paszport lub/i dowód)</li>
                                 <li className="trip-list-element">Ciepłe ubrania i obuwie (termoaktywna bielizna, kurtka z puchu, rękawiczki,czapka)</li>
