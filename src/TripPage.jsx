@@ -3,6 +3,10 @@ import { ReactComponent as LocationIcon } from "./assets/location.svg";
 import { ReactComponent as DateIcon } from "./assets/date.svg";
 import { ReactComponent as PriceIcon } from "./assets/price.svg";
 import { ReactComponent as BackIcon } from "./assets/backarrow.svg";
+import { ReactComponent as FlightOut } from "./assets/flighttakeof.svg";
+import { ReactComponent as FlightIn } from "./assets/flightland.svg";
+import { ReactComponent as Hotel } from "./assets/hotel1.svg";
+
 
 
 export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
@@ -28,7 +32,7 @@ export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
                         <div className='trip-desc-last'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
                         
                         <div className='trip-subtitle padding-top'>Amenities</div>
-                        <div className='trip-boxes'>
+                        <div className='trip-boxes trip-boxes-low'>
                             <div className='trip-box-amenities'>
                                 All inclusive
                             </div>
@@ -45,7 +49,43 @@ export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
 
                     </div>
 
-                    <div></div>
+                    <div className="trip-right-cell">
+                        <div className="trip-right-cell-photos">
+                            <div className="trip-grid-photo-placeholder">Test</div>
+                            <div className="trip-grid-photo-placeholder">Test</div>
+                            <div className="trip-grid-photo-placeholder">Test</div>
+                            <div className="trip-grid-photo-placeholder">Test</div>
+                            <div className="trip-grid-photo-placeholder">Test</div>
+                            <div className="trip-grid-photo-placeholder">Test</div>
+                        </div>
+                        <div className="trip-summary">
+                            <div className="trip-summary-title">Trip summary</div>
+                            <div className="trip-summary-icons">
+                                <FlightOut className='icon-32'></FlightOut>
+                                Poland, Warsaw
+                            </div>
+                            <div className="trip-summary-icons">
+                                <DateIcon className='icon-32'></DateIcon>
+                                14 days
+                            </div>
+                            <div className="trip-summary-icons">
+                                <Hotel className='icon-32'></Hotel>
+                                Hilton Oslo, Superior room
+                            </div>
+                            <div className='card-price-cell trip-price-cell'>
+                                <div className='card-price-text trip-price-text'>
+                                    <div className='price'>599$</div>
+                                    <div className='price'>399$</div>
+                                    <div className='sub-price trip-sub-price'>Per adult</div>
+                                    <div className='sub-price'>Per child</div>
+                                </div>
+                                <div className="trip-buttons">
+                                    <button className='card-button'>Check trip</button>
+                                    <button className='card-button trip-button'>Check trip</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
