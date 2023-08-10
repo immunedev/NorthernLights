@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       {showFinalPage ? (
         <FinalPage 
         tripData={selectedTrip}
