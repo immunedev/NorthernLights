@@ -804,7 +804,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
     display: flex
     flex-direction: row
     align-items: center
-    text-align: center
+    // text-align: center
     align-content: center
     gap: 15px
     padding-left: 10px
@@ -1259,8 +1259,6 @@ input[type="date"]::-webkit-calendar-picker-indicator
     .trip-right-cell-photos
         display: none
 
-    .trip-summary
-        height: 40vh
         
 
 @media (max-width: 900px) 
@@ -1298,8 +1296,8 @@ input[type="date"]::-webkit-calendar-picker-indicator
         line-height: normal
         padding-left: 15px
 
-    .trip-desc
-        font-size: 14px
+    // .trip-desc
+    //     font-size: 14px
 
     .final-page-box
         display: flex 
@@ -1349,10 +1347,13 @@ input[type="date"]::-webkit-calendar-picker-indicator
         grid-template-rows: 200px 1fr
         grid-row-gap: 15px
 
-
+    .trip-content-grid
+        grid-template-rows: 1fr auto
 
     .trip-left-cell
-        width: 80vw
+        width: 100%
+        padding: 8px
+        bodrer-sizing: border-box
     
     .trip-boxes
         flex-wrap: wrap
@@ -1370,11 +1371,8 @@ input[type="date"]::-webkit-calendar-picker-indicator
         padding-bottom: 0px
 
     .trip-right-cell
-        grid-template-rows: 50vh
+        grid-template-rows: auto
         padding-top: 0px
-
-    .trip-summary
-        height: 45vh
 
     .trip-photo 
         border-radius: 15px
