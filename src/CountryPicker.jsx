@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as DownArrow } from "./assets/downarrow.svg";
+import { ReactComponent as GlobeIcon } from "./assets/globe.svg";
 
 export default function CountryForm({ placeholder }) {
     const [value, setValue] = useState('');
@@ -55,6 +56,7 @@ export default function CountryForm({ placeholder }) {
         <div onClick={handleOpen} className="country-picker-form">
           <div className="country-text">{value}</div>
           <div className="icon-help">
+            <GlobeIcon className='guest-icon'></GlobeIcon>
             <DownArrow className="down-arrow"></DownArrow>
           </div>
           <div className={`menu-container ${open ? "active" : ""}`}>
