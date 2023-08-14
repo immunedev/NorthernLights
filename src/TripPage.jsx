@@ -51,12 +51,12 @@ export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
 
                     <div className="trip-right-cell">
                         <div className="trip-right-cell-photos">
-                            <div className="trip-grid-photo-placeholder">Test</div>
-                            <div className="trip-grid-photo-placeholder">Test</div>
-                            <div className="trip-grid-photo-placeholder">Test</div>
-                            <div className="trip-grid-photo-placeholder">Test</div>
-                            <div className="trip-grid-photo-placeholder">Test</div>
-                            <div className="trip-grid-photo-placeholder">Test</div>
+                            <div className="trip-grid-photo-placeholder"></div>
+                            <div className="trip-grid-photo-placeholder"></div>
+                            <div className="trip-grid-photo-placeholder"></div>
+                            <div className="trip-grid-photo-placeholder"></div>
+                            <div className="trip-grid-photo-placeholder"></div>
+                            <div className="trip-grid-photo-placeholder"></div>
                         </div>
                         <div className="trip-summary">
                             <div className="trip-summary-title">Trip summary</div>
