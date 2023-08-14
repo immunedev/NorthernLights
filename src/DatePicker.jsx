@@ -37,6 +37,13 @@ export default function DateForm({ placeholder }) {
  
 
   return (
+
+    
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // do fixa jest button do otwierania tego forma tbh nie wiem jak to zrobic :/
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
     <div className="date-picker-form" onClick={handleFormClick}>
       <input placeholder={placeholder} className="input-date" type="date" value={startDate || ""} onChange={handleDateChange} />
       <span className="open-button">

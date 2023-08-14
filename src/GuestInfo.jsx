@@ -70,6 +70,12 @@ export default function GuestForm({ placeholder }) {
         <ProfileIcon className="guest-icon" />
         <DownArrow className="down-arrow" />
       </div>
+
+    {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
+    {/* To na dole zostawiam bo funkcjonuje dobrze tylko trzeba zaimplementowac nowy design :>*/}
+    {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
+
+
       <div ref={guestMenuRef} className={`menu-container-guest ${open ? "active" : ""}`}>
         <div className="guest-menu">
           <div className="guest-menu-grid">
