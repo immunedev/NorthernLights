@@ -18,10 +18,8 @@ export default function Header(){
                                 Places
                             </div>
                             <div className="navbar-element">
-                                <div className="navbar-more">
-                                    More
-                                    <DownArrow className="down-arrow"></DownArrow>
-                                </div>
+                                More
+                                <DownArrow className="down-arrow"></DownArrow>
                             </div>
                             <div className="profile-text">Login</div>
                         </div>

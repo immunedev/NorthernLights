@@ -10,7 +10,7 @@ export default function SearchBar(){
             <div className="search-bar">
                 <DateForm placeholder="Check-in"></DateForm>
                 <DateForm placeholder="Check-out"></DateForm>
-                <GuestForm placeholder="Guest info"></GuestForm>
+                <GuestForm placeholder="Guests"></GuestForm>
                 <CountryForm placeholder="Country"></CountryForm>
                 <Button placeholder="Search" cssClass="search-button"></Button>
             </div>

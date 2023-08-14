@@ -3,6 +3,7 @@ import { ReactComponent as ProfileIcon } from "./assets/profile.svg";
 import { ReactComponent as DownArrow } from "./assets/downarrow.svg";
 import { ReactComponent as PlusIcon } from "./assets/plus.svg";
 import { ReactComponent as MinusIcon } from "./assets/minus.svg";
+import classNames from "classnames";
 
 export default function GuestForm({ placeholder }) {
   const [value, setValue] = useState(placeholder);
@@ -55,20 +56,20 @@ export default function GuestForm({ placeholder }) {
     const totalGuests = guestCount + childrenCount;
 
     if (totalGuests === 0) {
-      setValue("Choose Guests");
+      setValue(placeholder);
     } else {
       setValue(`${totalGuests} Guest${totalGuests !== 1 ? "s" : ""}`);
     }
-  }, [guestCount, childrenCount]);
+  }, [guestCount, childrenCount, placeholder]);
 
   return (
-    <div className="guest-picker-form">
-      <div onClick={handleOpen} className="date-text">
+    <div ref={guestMenuRef} className="guest-picker-form" onClick={handleOpen}>
+      <div className={"date-text " + (value == placeholder ? "placeholder" : "")}>
         {value}
       </div>
-      <div onClick={handleOpen} className="icon-help-guest">
+      <div className="icon-help-guest">
         <ProfileIcon className="guest-icon" />
-        <DownArrow className="down-arrow" />
+        <DownArrow className={classNames("down-arrow", { flip: open })} />
       </div>
 
     {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
@@ -76,7 +77,7 @@ export default function GuestForm({ placeholder }) {
     {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
 
 
-      <div ref={guestMenuRef} className={`menu-container-guest ${open ? "active" : ""}`}>
+      <div  className={`menu-container-guest ${open ? "active" : ""}`}>
         <div className="guest-menu">
           <div className="guest-menu-grid">
             <div className="guest-menu-content">

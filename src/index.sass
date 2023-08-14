@@ -8,7 +8,7 @@ html, body, #root
 
 body
     
-    font-family: 'Roboto Mono', sans-serif
+    font-family: 'Inter', sans-serif
     font-size: 18px
     color: #fff
     background-color: $bg-page
@@ -131,9 +131,11 @@ body
     text-align: center
     font-family: Inter
     font-size: 20px
-    font-style: normal
-    font-weight: 300
-    line-height: normal
+    font-weight: 400
+
+    display: flex
+    align-items: center
+    gap: 8px
 
 
 .profile-text
@@ -156,15 +158,16 @@ body
 
 .search-bar
     width: 80%
-    // height: 100%
+    height: 80px
+
     display: flex
     flex-direction: row
-    align-items: center
-    // background: $secondary-color
-    background: linear-gradient(135deg, rgba(12, 237, 156, 0.14) 0%, rgba(48, 119, 255, 0.14) 100%)
+    //align-items: center
+    background: $secondary-color
     border-radius: 20px
-    padding: 12px
+    padding: 16px
     gap: 16px
+
     box-sizing: border-box
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25)
 
@@ -176,7 +179,7 @@ body
     align-content: center
     text-align: center
 
-    width: 250px
+    flex: 1
     height: 36px
 
     background: $bg-input
@@ -186,10 +189,9 @@ body
     cursor: pointer
 
 .input-date
-    color: #fff
+    color: $outline-color
     font-family: Inter
     font-size: 16px
-    font-style: italic
     font-weight: 400
     line-height: normal
     display: flex
@@ -240,10 +242,14 @@ input[type="date"]::-webkit-calendar-picker-indicator
     text-align: center
     background: $bg-input
     border-radius: 15px
-    width: 250px
+
+    flex: 1
+
     height: 36px
     padding: 5px
     cursor: pointer
+
+    position: relative
 
 
 
@@ -364,15 +370,15 @@ input[type="date"]::-webkit-calendar-picker-indicator
     display: flex
     justify-content: center
     align-items: center
+
     text-align: center
-    align-content: center
-    font-family: Inter
     font-size: 16px
-    font-style: normal
     font-weight: 400
-    line-height: normal
+
+    user-select: none
     
-    
+    &.placeholder
+        color:  $outline-color
 
 
 .calender-icon
@@ -395,9 +401,6 @@ input[type="date"]::-webkit-calendar-picker-indicator
     // margin-right: -15%
 
 
-.country-picker-form:hover
-    filter: brightness(0.95)
-
     
 
 .icon-help-guest
@@ -409,6 +412,11 @@ input[type="date"]::-webkit-calendar-picker-indicator
 .down-arrow
     padding: 10px
     fill: $accent-color
+
+    transition: transform 100ms
+
+    &.flip
+        transform: rotate(180deg)
 
 
 
@@ -436,12 +444,15 @@ input[type="date"]::-webkit-calendar-picker-indicator
     flex-direction: row
     justify-content: space-between
     align-content: center
-    text-align: center
     background: $bg-input
     border-radius: 15px
+
+    position: relative
     
     height: 36px
-    width: 250px
+
+    flex: 1
+
     padding: 5px
     cursor: pointer
 
@@ -491,51 +502,57 @@ input[type="date"]::-webkit-calendar-picker-indicator
 .country-text
     color: #FFF
     display: flex
+
     justify-content: center
     align-items: center
-    text-align: center
     align-content: center
-    font-family: Inter
     font-size: 16px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+
     max-width: 150px
     padding-left: 10px
 
+    user-select: none
+
+    &.placeholder
+        color: $outline-color
+
 .search-button
     display: flex
-    justify-content: center
-    align-content: center
-    text-align: center
-    background: $accent-color
-    border-radius: 15px
-    border-color: $outline-color
-    height: 36px
-    width: 350px
-    
-    padding: 5px
-    margin: 10px
 
-.search-button:hover
-    filter: brightness(0.8)
-
-.search-button:active
-    background: #888181
-    color: $accent-color
-
-.button-text
-    color: #FFF
-    display: flex
     justify-content: center
     align-items: center
     text-align: center
-    align-content: center
-    font-family: Inter
+
+    background: $accent-color
+    border-radius: 15px
+
+    outline: none
+    border: none
+
+    color: $bg-page
+    font-weight: 600
+    font-family: inherit
     font-size: 16px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+
+    user-select: none
+
+    flex: 1
+
+    height: 100%
+
+    box-sizing: border-box
+    padding: 5px
+
+    transition: background 100ms
+
+    cursor: pointer
+
+.search-button:hover
+    background: darken($accent-color, 5%)
+
+.search-button:active
+    background: darken($accent-color, 15%)
+
 
 
 .content-container
@@ -1131,13 +1148,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
 
 .date-text 
-    
-    font-style: italic
     padding: 10px
 
-.country-text 
-    
-    font-style: italic
+
 
 
 
@@ -1234,6 +1247,63 @@ input[type="date"]::-webkit-calendar-picker-indicator
     height: 24px
     fill: $accent-color
 
+
+.page
+    position: relative
+
+    & .page-bg
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100vh
+        overflow: hidden
+        z-index: -1
+        //pointer-events: none
+
+        &::before
+            content: ""
+            position: absolute
+            inset: 0 -500px 220px 0
+
+            opacity: 1         
+
+            background: radial-gradient(140.94% 106.66% at 99.03% 0.00%, rgba(12, 223, 237, 0.16) 0%, rgba(12, 223, 237, 0.16) 0.01%, rgba(12, 237, 156, 0.10) 35.94%, rgba(12, 237, 156, 0.27) 40.63%, rgba(12, 223, 237, 0.08) 48.44%, rgba(36, 36, 36, 0.00) 100%)
+
+
+        &::after
+            content: ""
+            position: absolute
+            inset: 0 0 0 0
+
+            opacity: 1           
+
+            background: radial-gradient(126.77% 97.63% at 99.03% 0.00%, rgba(12, 223, 237, 0.16) 0%, rgba(12, 223, 237, 0.16) 0.01%, rgba(12, 237, 156, 0.10) 35.94%, rgba(12, 237, 156, 0.27) 40.63%, rgba(12, 223, 237, 0.08) 48.44%, rgba(36, 36, 36, 0.00) 100%)
+
+
+        & .star
+            position: absolute
+            aspect-ratio: 1 / 1
+            
+            background: $star-color
+            border-radius: 50%
+            
+            &.star-sm
+                width: 1px
+                box-shadow: 0px 0px 8px 4px $star-color-glow
+
+            &.star-md
+                width: 2px
+                box-shadow: 0px 0px 8px 5px $star-color-glow
+
+            
+            &.star-lg
+                width: 3px
+                box-shadow: 0px 0px 8px 6px $star-color-glow
+
+
+
+    
 
     
     

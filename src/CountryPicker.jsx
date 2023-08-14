@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ReactComponent as DownArrow } from "./assets/downarrow.svg";
 import { ReactComponent as GlobeIcon } from "./assets/globe.svg";
+
+import classNames from 'classnames'
 
 export default function CountryForm({ placeholder }) {
     const [value, setValue] = useState('');
@@ -47,17 +49,32 @@ export default function CountryForm({ placeholder }) {
       setOpen(false); 
     };
  
-    React.useEffect(() => {
+    useEffect(() => {
         setValue(placeholder);
     }, [placeholder]);
 
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+          setOpen(false);
+        }
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [])
+
 
     return (
-        <div onClick={handleOpen} className="country-picker-form">
-          <div className="country-text">{value}</div>
+        <div ref={menuRef} onClick={handleOpen} className="country-picker-form">
+          <div className={"country-text " + (value == placeholder ? "placeholder" : "")}>{value}</div>
           <div className="icon-help">
             <GlobeIcon className='guest-icon'></GlobeIcon>
-            <DownArrow className="down-arrow"></DownArrow>
+            <DownArrow className={classNames("down-arrow", { flip: open })}></DownArrow>
           </div>
           <div className={`menu-container ${open ? "active" : ""}`}>
             <ul className="menu">
