@@ -59,10 +59,7 @@ document.querySelectorAll(".star").forEach((star, i) => {
       y: 3 * coordTransform(frY)
     };
 
-    document.querySelectorAll(".star").forEach((star) => {
-      star.style.transform = `translate(${move.x}px, ${move.y}px)`;
-    })
-
+    document.querySelector(".star-container").style.transform = `translate(${move.x}px, ${move.y}px)`;
   }
  
   return (
