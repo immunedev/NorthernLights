@@ -100,8 +100,6 @@ document.querySelectorAll(".star").forEach((star, i) => {
         onBackClick={handleBackToContent} />
       ) : (
         <>
-          <Lead />
-          <SearchBar />
           {selectedTrip ? (
             <TripPage
               tripData={selectedTrip}
@@ -109,7 +107,11 @@ document.querySelectorAll(".star").forEach((star, i) => {
               onShowFinalPage={handleShowFinalPage}
             />
           ) : (
-            <ContentContainer onTripSelect={handleTripSelect} />
+            <>
+              <Lead />
+              <SearchBar />
+              <ContentContainer onTripSelect={handleTripSelect} />
+            </>
           )}
         </>
       )}

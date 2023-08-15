@@ -7,7 +7,6 @@ html, body, #root
     scroll-behaviour: smooth
 
 body
-    
     font-family: 'Inter', sans-serif
     font-size: 18px
     color: #fff
@@ -15,17 +14,6 @@ body
 
     -webkit-font-smoothing: antialiased
     overflow-y: scroll
-
-.background-scene
-    position: fixed
-    z-index: -1
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background-color: $bg-page
-    overflow-y: auto
-
 
 .logo-container
     width: 100%
@@ -50,7 +38,7 @@ body
 
 .navbar-more
     display: flex
-    flex-direction: row
+    
     align-content: center
     justify-content: center
     text-align: center
@@ -59,7 +47,7 @@ body
 .navbar-logo
     width: 100%
     display: flex
-    flex-direction: row
+    
     align-content: center
     justify-content: space-between
     text-align: center
@@ -93,15 +81,9 @@ body
 .child-price 
   color: $accent-color
 
-
-
-
-
-     
-
 .navbar-content
     display: flex
-    flex-direction: row
+    
     align-content: center
     justify-content: center
     text-align: center
@@ -110,7 +92,7 @@ body
 
 .navbar-elements
     display: flex
-    flex-direction: row
+    
     align-content: center
     justify-content: center
     text-align: center
@@ -123,7 +105,7 @@ body
     text-align: center
     font-family: Inter
     font-size: 20px
-    font-weight: 400
+    
 
     display: flex
     align-items: center
@@ -135,9 +117,9 @@ body
     color: $accent-color
     font-family: Inter
     font-size: 20px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    
+    
+    
 
 .search-bar-container
     width: 100%
@@ -153,7 +135,7 @@ body
     height: 80px
 
     display: flex
-    flex-direction: row
+    
     //align-items: center
     background: $secondary-color
     border-radius: 20px
@@ -166,7 +148,7 @@ body
 
 .date-picker-form
     display: flex
-    flex-direction: row
+    
     justify-content: space-between
     align-items: center
     text-align: center
@@ -182,17 +164,61 @@ body
     padding: 5px
     cursor: pointer
 
+    position: relative
+
 .date-picker-inner
     width: 100%
     display: flex !important
     align-items: center
 
+.date-picker-calendar
+    font-family: "Inter", sans-serif
+    
+    background: $bg-input
+    //border: 1px solid transparentize($accent-color, 0.8)
+    border: none
+    border-radius: 15px
+    
+    
+
+    & .react-datepicker__day
+        color: #fff
+
+        &:hover
+            background: $accent-color-secondary
+            color: #fff
+
+        &.react-datepicker__day--selected
+            color: #fff
+
+        &.react-datepicker__day--outside-month, &.react-datepicker__day--disabled
+            color: rgba(255, 255, 255, 0.3)
+
+    & .react-datepicker__day-name
+        color: $accent-color
+
+    & .react-datepicker__header
+        background: $bg-input
+        border: none
+        border-radius: 15px
+
+    & .react-datepicker__current-month
+        color: $accent-color
+
+    & .react-datepicker__triangle
+        display: none
+        &::before, &::after
+            border-bottom-color: transparentize($accent-color, 0.8) !important
+
+    & .react-datepicker__navigation-icon::before
+        border-color: $accent-color
+
 .input-date
     color: $outline-color
     font-family: Inter
     font-size: 16px
-    font-weight: 400
-    line-height: normal
+    
+    
     display: flex
     align-items: center 
     align-content: center
@@ -238,7 +264,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
 .guest-picker-form
     display: flex
-    flex-direction: row
+    
     justify-content: space-between
     align-content: center
     text-align: center
@@ -257,105 +283,78 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
 .menu-container-guest
     position: absolute
-    top: 100%
+
+    top: calc(100% + 8px)
     left: 0
-    // width: 100%
-    background-color: $secondary-color
-    // border: 1px solid $outline-color
-    border-radius: 15px
-    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
-    display: none
-    margin-top: 10px
 
-.menu-container-guest.active 
-    display: block
-
-.guest-menu-flex
-    display: none 
-
-    &.open 
-    display: block 
-    height: 100%
-    // width: 100%
-
-.guest-menu-content
-    display: flex
-    flex-direction: column
-    padding: 10px
-    justify-content: center
-    align-items: center
-    border: 1px solid $outline-color
-    border-radius: 15px
-    background: #2c2d2e
-    position: relative
-    z-index: 1
-
-.guest-menu-content-row
-    display: flex
-    flex-direction: row
-    width: 250px
-    justify-content: space-between
-    align-content: center
-    align-items: center
-    padding: 5px
-
-
-.guest-menu-type
-    color: #FFF
-    text-align: center
-    font-family: Inter
-    font-size: 20px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    box-sizing: border-box    
+    min-width: 100%
     
-
-.guest-menu-number
-    color: #FFF
-    text-align: center
-    font-family: Inter
     font-size: 16px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
-    padding-left: 5px
-    padding-right: 5px
+
+    background: $bg-input
+    border-radius: 15px
+
+    display: none
+    grid-template-columns: 1fr 1fr
+    gap: 16px
+
+    text-align: left
+
+    padding: 32px
+    cursor: auto
     
+    &.active
+        display: grid
 
-.guest-buttons
-    display: flex
-    width: 70px
-    flex-direction: row
-    align-content: center
-    align-items: center
-    justify-content: space-evenly
-    padding: 5px
+    & .menu-guest-controls
+        display: flex
+        justify-content: end
+        
+    & .menu-guest-control
+        width: 24px
+        display: flex
 
-    
-.guest-menu-button-plus
-    height: 25px
-    width: 25px
-    display: flex
-    align-content: center
-    align-items: center
-    justify-content: center
-    background-color: $accent-color
-    border-radius: 100%
-    margin-right: 10px
-    margin-left: 30px
-    border: none
+        justify-content: center
+        align-items: center
+        line-height: 0
 
-.guest-menu-button-minus
-    height: 25px
-    width: 25px
-    display: flex
-    align-content: center
-    align-items: center
-    justify-content: center
-    background-color: #fff
-    border-radius: 100%
-    margin-right: 20px
-    border: none
+        font-size: 14px
+
+        cursor: pointer
+
+        border: none
+        color: #fff
+
+        background: transparent
+
+        &[type='number']
+            text-align: center
+            cursor: text
+            &:focus
+                outline: none
+
+        &.menu-guest-control-add
+            background: $accent-color
+            border-top-right-radius: 6px
+            border-bottom-right-radius: 6px
+        
+        &.menu-guest-control-sub
+            background: $outline-color
+
+            border-top-left-radius: 6px
+            border-bottom-left-radius: 6px
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input[type=number]
+  -moz-appearance: textfield
+
+
+
 
 .minus-icon
     height: 15px
@@ -373,7 +372,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
     align-items: center
 
     font-size: 16px
-    font-weight: 400
+    
 
     user-select: none
     
@@ -441,7 +440,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
 .country-picker-form
     display: flex
-    flex-direction: row
+    
     justify-content: space-between
     align-content: center
     background: $bg-input
@@ -606,9 +605,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 36px
-    font-style: normal
+    
     font-weight: 600
-    line-height: normal
+    
     padding: 5px
     padding-bottom: 10px
     border-bottom: 1px solid $outline-color
@@ -636,9 +635,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 12px
-    font-style: normal
+    
     font-weight: 500
-    line-height: normal
+    
 
 .card-desc
     display: grid
@@ -653,9 +652,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 14px
-    font-style: normal
+    
     font-weight: 500
-    line-height: normal
+    
 
 .card-price-cell
     display: grid
@@ -676,18 +675,18 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: $accent-color-secondary
     font-family: Inter
     font-size: 24px
-    font-style: normal
+    
     font-weight: 500
-    line-height: normal
+    
 
 .sub-price
     color: #979797
     text-align: center
     font-family: Inter
     font-size: 10px
-    font-style: normal
+    
     font-weight: 500
-    line-height: normal
+    
     padding-top: 5px
 
 .card-button
@@ -699,9 +698,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     text-align: center
     font-family: Inter
     font-size: 16px
-    font-style: normal
+    
     font-weight: 700
-    line-height: normal
+    
 
 .icon-32
     width: 32px
@@ -719,7 +718,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
     
 .trip-box
-    width: 80vw
+    width: 80%
     overflow: hidden
     background-color: $secondary-color
     display: flex
@@ -746,7 +745,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
 .trip-boxes
     display: flex
-    flex-direction: row
+    
     gap: 20px
     padding-bottom: 30px
 
@@ -758,17 +757,17 @@ input[type="date"]::-webkit-calendar-picker-indicator
     text-align: center
     font-family: Inter
     font-size: 16px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    
+    
+    
 
 .trip-subtitle
     color: $accent-color
     font-family: Inter
     font-size: 24px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    
+    
+    
     padding-bottom: 30px
 
 .padding-top
@@ -778,18 +777,18 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 16px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    
+    
+    
     padding-bottom: 30px
 
 .trip-desc-last
     color: #FFF
     font-family: Inter
     font-size: 16px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    
+    
+    
     padding-bottom: 30px
     border-bottom: 1px solid $outline-color
 
@@ -801,9 +800,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     text-align: center
     font-family: Inter
     font-size: 16px
-    font-style: normal
-    font-weight: 400
-    line-height: normal  
+    
+    
+      
 
 .trip-right-cell
     display: grid
@@ -844,14 +843,14 @@ input[type="date"]::-webkit-calendar-picker-indicator
     text-align: center
     font-family: Inter
     font-size: 24px
-    font-style: normal
+    
     font-weight: 500
-    line-height: normal
+    
     padding-bottom: 20px
 
 .trip-summary-icons
     display: flex
-    flex-direction: row
+    
     align-items: center
     // text-align: center
     align-content: center
@@ -861,9 +860,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 16px
-    font-style: normal
+    
     font-weight: 500
-    line-height: normal
+    
 
 .trip-price-text
     align-items: center
@@ -954,9 +953,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 16px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    
+    
+    
     padding-bottom: 10px
 
 
@@ -972,13 +971,13 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 36px
-    font-style: normal
+    
     font-weight: 700
-    line-height: normal
+    
 
 .final-flight-row
     display: flex
-    flex-direction: row
+    
     padding: 5px 
     align-content: center
     justify-content: space-between
@@ -986,7 +985,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
 .final-flight-cell
     display: flex
-    flex-direction: row
+    
     align-content: center
     justify-content: center
     align-items: center
@@ -1008,17 +1007,17 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 20px
-    font-style: normal
+    
     font-weight: 700
-    line-height: normal
+    
 
 .details
     color: rgba(255, 255, 255, 0.50)
     font-family: Inter
     font-size: 16px
-    font-style: normal
+    
     font-weight: 700
-    line-height: normal
+    
     margin-left: 52px
     margin-top: 0
 
@@ -1031,7 +1030,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
 .final-icon-cell
     display: flex
-    flex-direction: row
+    
     align-content: center
     justify-content: flex-start
     align-items: center
@@ -1042,9 +1041,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 16px
-    font-style: normal
+    
     font-weight: 700
-    line-height: normal
+    
 
 
 
@@ -1076,7 +1075,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
 
 .card-icon-summary
     display: flex
-    flex-direction: row
+    
     padding: 12px
     padding-left: 35px
     align-items: center
@@ -1086,9 +1085,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 20px
-    font-style: normal
+    
     font-weight: 700
-    line-height: normal
+    
     padding-left: 15px
     align-items: center 
 
@@ -1102,9 +1101,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
 //     color: #FFF
 //     font-family: Inter
 //     font-size: 20px
-//     font-style: normal
+//     
 //     font-weight: 700
-//     line-height: normal
+//     
 //     padding-left: 15px
     
 // .price-summary-button-div
@@ -1124,9 +1123,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 20px
-    font-style: normal
+    
     font-weight: 700
-    line-height: normal
+    
     background-color: $accent-color
     border-radius: 15px
     border: none
@@ -1143,8 +1142,6 @@ input[type="date"]::-webkit-calendar-picker-indicator
     display: inline
 
 
-.date-picker-form 
-    position: relative
 
 
 .date-text 
@@ -1224,9 +1221,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FFF
     font-family: Inter
     font-size: 16px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    
+    
+    
     background-color: $accent-color
     border-radius: 15px
 
@@ -1238,9 +1235,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #7c7c7c9a
     font-family: Inter
     font-size: 13px
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    
+    
+    
 
 .card-svg
     width: 24px
@@ -1392,16 +1389,16 @@ input[type="date"]::-webkit-calendar-picker-indicator
         color: #FFF
         font-family: Inter
         font-size: 24px
-        font-style: normal
+        
         font-weight: 700
-        line-height: normal
+        
 
     .trip-desc-subtitle
         padding-left: 60px
         color: #3077ff
         font-family: Inter
         font-size: 20px
-        font-style: normal
+        
         font-weight: 500
         line-height: norma
 
@@ -1409,9 +1406,9 @@ input[type="date"]::-webkit-calendar-picker-indicator
         color: #FFF
         font-family: Inter
         font-size: 14px
-        font-style: normal
+        
         font-weight: 700
-        line-height: normal
+        
         padding-left: 15px
 
     // .trip-desc
@@ -1450,7 +1447,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
         grid-column-gap: 0px
         grid-row-gap: 30px
         justify-items: center
-        width: 80vw
+        width: 80%
         padding-bottom: 5px
     
     .details-text

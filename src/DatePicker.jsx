@@ -18,7 +18,7 @@ DatePickerCustomInput.displayName = "datePicker";
 const DatePickerWrapper = ({placeholder, selected, onChange, minDate, maxDate}) => {
   return (
     <div className="date-picker-form">
-      <DatePicker wrapperClassName="date-picker-inner" placeholderText={placeholder} selected={selected} onChange={onChange} minDate={minDate} maxDate={maxDate} customInput={<DatePickerCustomInput />} dateFormat="dd.MM.yyyy" />
+      <DatePicker calendarClassName="date-picker-calendar" wrapperClassName="date-picker-inner" placeholderText={placeholder} selected={selected} onChange={onChange} minDate={minDate} maxDate={maxDate} customInput={<DatePickerCustomInput />} dateFormat="dd.MM.yyyy" calendarStartDay={1} />
     </div>
   )
 }

@@ -15,11 +15,36 @@ export default function GuestForm({ placeholder }) {
   const inputRef = useRef(null);
   const menuRef = useRef(null);
 
+
   const handleOpen = (e) => {
     if (menuRef.current.contains(e.target)) return;
 
     setOpen((prevOpen) => !prevOpen);
   };
+
+  const handleChangeInput = (e) => {
+    let value = parseInt(e.target.value);
+
+    if (value < 0) value = 0;
+
+    if (e.target.name == "adultGuests") {
+      setGuestCount(parseInt(e.target.value));
+    } else if (e.target.name == "smallGuests") {
+      setChildrenCount(parseInt(e.target.value));
+    }
+  }
+
+  const changeGuestCount = ({adult, children}) => {
+    if (adult == undefined) adult = guestCount;
+    if (children == undefined) children = childrenCount;
+
+    if (adult < 0) adult = 0;
+    if (children < 0) children = 0;
+
+    setGuestCount(adult);
+    setChildrenCount(children);
+  }
+
 
   // Close the guest menu when clicking outside of it
   useEffect(() => {
@@ -28,36 +53,15 @@ export default function GuestForm({ placeholder }) {
         setOpen(false);
       }
     };
-
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  const handlePlusClick = () => {
-    setGuestCount((prevCount) => prevCount + 1);
-  };
-
-  const handleMinusClick = () => {
-    if (guestCount > 0) {
-      setGuestCount((prevCount) => prevCount - 1);
-    }
-  };
-
-  const handlePlusClickChildren = () => {
-    setChildrenCount((prevCount) => prevCount + 1);
-  };
-
-  const handleMinusClickChildren = () => {
-    if (childrenCount > 0) {
-      setChildrenCount((prevCount) => prevCount - 1);
-    }
-  };
 
   useEffect(() => {
-    const totalGuests = guestCount + childrenCount;
+    const totalGuests = (guestCount + childrenCount) || 0;
 
     if (totalGuests === 0) {
       setValue(placeholder);
@@ -82,35 +86,18 @@ export default function GuestForm({ placeholder }) {
 
 
       <div ref={menuRef} className={`menu-container-guest ${open ? "active" : ""}`}>
-        <div className="guest-menu">
-          <div className="guest-menu-grid">
-            <div className="guest-menu-content">
-              <div className="guest-menu-content-row">
-                <div className="guest-menu-type">Adults</div>
-                <div className="guest-buttons">
-                  <div className="guest-menu-number">{guestCount}</div>
-                  <button className="guest-menu-button-plus">
-                    <PlusIcon className="plus-icon" onClick={handlePlusClick} />
-                  </button>
-                  <button className="guest-menu-button-minus">
-                    <MinusIcon className="minus-icon" onClick={handleMinusClick} />
-                  </button>
-                </div>
-              </div>
-              <div className="guest-menu-content-row">
-                <div className="guest-menu-type">Children</div>
-                <div className="guest-buttons">
-                  <div className="guest-menu-number">{childrenCount}</div>
-                  <button className="guest-menu-button-plus">
-                    <PlusIcon className="plus-icon" onClick={handlePlusClickChildren} />
-                  </button>
-                  <button className="guest-menu-button-minus">
-                    <MinusIcon className="minus-icon" onClick={handleMinusClickChildren} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+        <span>Adults</span>
+        <div className="menu-guest-controls">
+          <input type="number" value={guestCount} onChange={handleChangeInput} max={9} name="adultGuests" className="menu-guest-control menu-guest-control-count"></input>
+          <button className="menu-guest-control menu-guest-control-sub" onClick={() => changeGuestCount({adult: guestCount - 1})}>-</button>
+          <button className="menu-guest-control menu-guest-control-add" onClick={() => changeGuestCount({ adult: guestCount + 1 })}>+</button>
+        </div>
+
+        <span>Children</span>
+        <div className="menu-guest-controls">
+          <input type="number" value={childrenCount} onChange={handleChangeInput} max={9} name="smallGuests" className="menu-guest-control menu-guest-control-count"></input>
+          <button className="menu-guest-control menu-guest-control-sub" onClick={() => changeGuestCount({ children: childrenCount - 1 })}>-</button>
+          <button className="menu-guest-control menu-guest-control-add" onClick={() => changeGuestCount({ children: childrenCount + 1 })}>+</button>
         </div>
       </div>
     </div>
