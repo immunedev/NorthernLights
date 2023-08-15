@@ -1,56 +1,26 @@
-import React, { useState, useRef, useEffect } from "react";
+import { forwardRef } from "react";
 import { ReactComponent as CalenderIcon } from "./assets/calender.svg";
+import DatePicker from "react-datepicker"
 
-export default function DateForm({ placeholder }) {
-  const [startDate, setStartDate] = useState(null);
-  const datePickerRef = useRef(null);
+import classNames from "classnames"
 
+const DatePickerCustomInput = forwardRef(({value, onClick, placeholder}, ref) => (
+  <>
+    <div ref={ref} onClick={onClick} className={classNames("date-text", { placeholder: !value })}>{value || placeholder}</div>
+    <button className="open-button">
+      <CalenderIcon className='calender-icon'></CalenderIcon>
+    </button>
+  </>
+));
 
+DatePickerCustomInput.displayName = "datePicker";
 
-  const handleDateChange = (event) => {
-   
-    const selectedDate = event.target.value;
-
-  
-    setStartDate(selectedDate);
-    setDatePickerOpen(false);
-  };
-
-  const handleFormClick = () => {
-    setDatePickerOpen(true);
-  };
-
-  
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (datePickerRef.current && !datePickerRef.current.contains(event.target)) {
-        setDatePickerOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [datePickerRef]);
-
- 
-
+const DatePickerWrapper = ({placeholder, selected, onChange, minDate, maxDate}) => {
   return (
-
-    
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // do fixa jest button do otwierania tego forma tbh nie wiem jak to zrobic :/
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-    <div className="date-picker-form" onClick={handleFormClick}>
-      <input placeholder={placeholder} className="input-date" type="date" value={startDate || ""} onChange={handleDateChange} />
-      <span className="open-button">
-        <button type="button">
-          <CalenderIcon className='calender-icon'></CalenderIcon>
-        </button>
-      </span>
+    <div className="date-picker-form">
+      <DatePicker wrapperClassName="date-picker-inner" placeholderText={placeholder} selected={selected} onChange={onChange} minDate={minDate} maxDate={maxDate} customInput={<DatePickerCustomInput />} dateFormat="dd.MM.yyyy" />
     </div>
-  );
+  )
 }
+
+export default DatePickerWrapper;

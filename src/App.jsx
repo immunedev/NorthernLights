@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 import ContentContainer from './ContentContainer';
 import TripPage from './TripPage';
 import FinalPage from './FinalPage';
+import Lead from './Lead';
 
 export default function App() {
   const [selectedTrip, setSelectedTrip] = useState(null);
@@ -58,9 +59,7 @@ document.querySelectorAll(".star").forEach((star, i) => {
       y: 3 * coordTransform(frY)
     };
 
-    console.log(e);
-
-    document.querySelectorAll(".star").forEach((star, i) => {
+    document.querySelectorAll(".star").forEach((star) => {
       star.style.transform = `translate(${move.x}px, ${move.y}px)`;
     })
 
@@ -94,12 +93,14 @@ document.querySelectorAll(".star").forEach((star, i) => {
       </div>
  
       <Header />
+      
       {showFinalPage ? (
         <FinalPage 
         tripData={selectedTrip}
         onBackClick={handleBackToContent} />
       ) : (
         <>
+          <Lead />
           <SearchBar />
           {selectedTrip ? (
             <TripPage

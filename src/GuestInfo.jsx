@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ReactComponent as ProfileIcon } from "./assets/profile.svg";
 import { ReactComponent as DownArrow } from "./assets/downarrow.svg";
 import { ReactComponent as PlusIcon } from "./assets/plus.svg";
@@ -12,19 +12,23 @@ export default function GuestForm({ placeholder }) {
   const [childrenCount, setChildrenCount] = useState(0);
 
   // Create a ref to store the reference to the guest menu container
-  const guestMenuRef = useRef();
+  const inputRef = useRef(null);
+  const menuRef = useRef(null);
 
-  const handleOpen = () => {
+  const handleOpen = (e) => {
+    if (menuRef.current.contains(e.target)) return;
+
     setOpen((prevOpen) => !prevOpen);
   };
 
   // Close the guest menu when clicking outside of it
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (guestMenuRef.current && !guestMenuRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (inputRef.current && !inputRef.current.contains(e.target)) {
         setOpen(false);
       }
     };
+
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -63,7 +67,7 @@ export default function GuestForm({ placeholder }) {
   }, [guestCount, childrenCount, placeholder]);
 
   return (
-    <div ref={guestMenuRef} className="guest-picker-form" onClick={handleOpen}>
+    <div ref={inputRef} className="guest-picker-form" onClick={handleOpen}>
       <div className={"date-text " + (value == placeholder ? "placeholder" : "")}>
         {value}
       </div>
@@ -77,7 +81,7 @@ export default function GuestForm({ placeholder }) {
     {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
 
 
-      <div  className={`menu-container-guest ${open ? "active" : ""}`}>
+      <div ref={menuRef} className={`menu-container-guest ${open ? "active" : ""}`}>
         <div className="guest-menu">
           <div className="guest-menu-grid">
             <div className="guest-menu-content">

@@ -26,10 +26,6 @@ export default function Header(){
                         
                     </div>
                 </div>
-                <div className="navbar-text">
-                    <div className="navbar-main-text">Experience the magnificient Aurora</div>
-                    <div className="navbar-sub-text">Trips starting at <span className="child-price">$399 for children</span> and <span className="child-price">$599 for adults</span></div>
-                </div>
             </div>
         </div>
     )
