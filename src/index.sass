@@ -105,11 +105,82 @@ body
     text-align: center
     font-family: Inter
     font-size: 20px
-    
+
+    text-decoration: none
 
     display: flex
     align-items: center
     gap: 8px
+
+    position: relative
+
+.navbar-menu
+    position: absolute
+    display: none
+    opacity: 0
+    flex-direction: column
+
+    top: calc(100% + 8px)
+    right: 0
+
+    width: 460px
+
+    transition: opacity 200ms 
+
+    background: $bg-input
+    border-radius: 12px
+    padding: 0 24px
+
+    box-sizing: border-box
+
+
+    & .navbar-menu-element
+        display: flex
+        padding: 24px 0
+
+        align-items: center
+        
+        &:not(:last-child)
+            border-bottom: 1px solid transparentize($outline-color, 0.5)
+
+        & .navbar-menu-element-icon
+            height: 100%
+            width: 128px
+
+            flex-shrink: 0
+            fill: $accent-color
+
+            display: flex
+            align-items: center
+            justify-content: center
+
+            & svg
+                width: 32px
+                height: 32px
+            
+
+        & .navbar-menu-element-text
+            display: flex
+            flex-direction: column
+            
+            text-align: left
+            gap: 2px
+
+            justify-content: center
+            
+
+            & .navbar-menu-element-header
+                font-size: 20px
+                font-weight: 500
+
+            & .navbar-menu-element-desc
+                font-size: 16px
+                color: rgba(255, 255, 255, 0.3)
+                font-weight: 400
+
+.navbar-menu-link:hover .navbar-menu
+    display: flex
+    opacity: 1
 
 
 .profile-text
@@ -171,6 +242,9 @@ body
     display: flex !important
     align-items: center
 
+.accent
+    color: $accent-color
+
 .date-picker-calendar
     font-family: "Inter", sans-serif
     
@@ -188,11 +262,16 @@ body
             background: $accent-color-secondary
             color: #fff
 
-        &.react-datepicker__day--selected
+        &.react-datepicker__day--selected, &.react-datepicker__day--keyboard-selected
+            background: transparentize($accent-color-secondary, 0.5)
             color: #fff
 
         &.react-datepicker__day--outside-month, &.react-datepicker__day--disabled
             color: rgba(255, 255, 255, 0.3)
+
+        &.react-datepicker__day--today
+            color: $accent-color
+            background: transparent
 
     & .react-datepicker__day-name
         color: $accent-color
@@ -397,6 +476,8 @@ input[type=number]
     display: flex
     justify-content: flex-end
     align-items: center
+    gap: 12px
+    padding-right: 12px
     // margin-right: -15%
 
 
@@ -409,7 +490,9 @@ input[type=number]
     padding: auto
 
 .down-arrow
-    padding: 10px
+    //padding: 10px
+    width: 16px
+    height: 16px
     fill: $accent-color
 
     transition: transform 100ms
@@ -1153,6 +1236,7 @@ input[type=number]
 
 .icon-help 
   cursor: pointer
+
 
 .date-div
     display: flex

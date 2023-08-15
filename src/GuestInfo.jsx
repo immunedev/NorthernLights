@@ -75,7 +75,7 @@ export default function GuestForm({ placeholder }) {
       <div className={"date-text " + (value == placeholder ? "placeholder" : "")}>
         {value}
       </div>
-      <div className="icon-help-guest">
+      <div className="icon-help">
         <ProfileIcon className="guest-icon" />
         <DownArrow className={classNames("down-arrow", { flip: open })} />
       </div>
