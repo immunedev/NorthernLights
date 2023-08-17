@@ -602,10 +602,20 @@ input[type=number]
     margin-top: 10px
 
     z-index: 999
+
+
+.menu-container::-webkit-scrollbar
+    width: 10px  
+    background: $bg-card
+    border-radius: 15px
     
     
-::-webkit-scrollbar-thumb
-    background: $outline-color
+
+.menu-container::-webkit-scrollbar-thumb
+    background: $accent-color
+    width: 10px
+    border-radius: 15px
+
     
     
 
@@ -807,6 +817,7 @@ input[type=number]
     
     font-weight: 500
     
+    
 
 .card-price-cell
     display: grid
@@ -835,7 +846,7 @@ input[type=number]
     color: #979797
     text-align: center
     font-family: Inter
-    font-size: 10px
+    font-size: 12px
     
     font-weight: 500
     
