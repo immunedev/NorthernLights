@@ -4,6 +4,7 @@ import { ReactComponent as HotelIcon } from "./assets/hotel.svg";
 import { ReactComponent as CarIcon } from "./assets/car.svg";
 
 import classNames from "classnames"
+import AuthModal from "./AuthModal";
 
 function NavbarMenuElement({name, desc, icon}) {
     return (
@@ -72,7 +73,7 @@ export default function Header() {
                                 <DownArrow style={{fill: "#fff"}}></DownArrow>
                                 <NavbarMenu ref={navMenuRef} open={navMenuOpen} />
                             </a>
-                            <a href="#" className="navbar-element accent">Login</a>
+                            <AuthModal />
                         </div>
                         
                     </div>
