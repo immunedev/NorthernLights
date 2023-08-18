@@ -5,6 +5,7 @@ import ContentContainer from './ContentContainer';
 import TripPage from './TripPage';
 import FinalPage from './FinalPage';
 import Lead from './Lead';
+import Faq from './Faq';
 
 export default function App() {
   const [selectedTrip, setSelectedTrip] = useState(null);
@@ -89,9 +90,9 @@ document.querySelectorAll(".star").forEach((star, i) => {
         </div>
       </div>
  
-      <Header />
-      
-      {showFinalPage ? (
+      {/* <Header /> */}
+      <Faq></Faq>
+      {/* {showFinalPage ? (
         <FinalPage 
         tripData={selectedTrip}
         onBackClick={handleBackToContent} />
@@ -111,7 +112,7 @@ document.querySelectorAll(".star").forEach((star, i) => {
             </>
           )}
         </>
-      )}
+      )} */}
     </div>
   );
 }
