@@ -6,6 +6,8 @@ import TripPage from './TripPage';
 import FinalPage from './FinalPage';
 import Lead from './Lead';
 import Faq from './Faq';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 
 export default function App() {
   const [selectedTrip, setSelectedTrip] = useState(null);
@@ -64,55 +66,47 @@ document.querySelectorAll(".star").forEach((star, i) => {
   }
  
   return (
-    <div className="page">
-      <div className="page-bg">
-        <div className="star-container">
-          {
-            (() => {
-              const e = [];
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <div>
+            <Header />
+            <Lead />
+            <SearchBar />
+            <ContentContainer onTripSelect={handleTripSelect} />
+          </div>
+        }>
 
-              for (let i = 0; i <= STARS_SMALL; i++) {
-                e.push(<div className="star star-sm"></div>);
-              }
+          <Route path="trip" element={
+            <div>
+              <Header />
+              <TripPage
+                tripData={selectedTrip}
+                onBackClick={handleBackToContent}
+                onShowFinalPage={handleShowFinalPage}
+              />
+            </div>} />
 
-              for (let i = 0; i <= STARS_MEDIUM; i++) {
-                e.push(<div className="star star-md"></div>);
-              }
+          <Route path="final" element={
+            <div>
+              <Header />
+              <FinalPage 
+                tripData={selectedTrip}
+                onBackClick={handleBackToContent} />
+            </div>} />
 
-              for (let i = 0; i <= STARS_LARGE; i++) {
-                e.push(<div className="star star-lg"></div>);
-              }
-
-
-              return e
-            })()
-          }
-        </div>
-      </div>
- 
-      {/* <Header /> */}
-      <Faq></Faq>
-      {/* {showFinalPage ? (
-        <FinalPage 
-        tripData={selectedTrip}
-        onBackClick={handleBackToContent} />
-      ) : (
-        <>
-          {selectedTrip ? (
-            <TripPage
-              tripData={selectedTrip}
-              onBackClick={handleBackToContent}
-              onShowFinalPage={handleShowFinalPage}
-            />
-          ) : (
-            <>
-              <Lead />
-              <SearchBar />
-              <ContentContainer onTripSelect={handleTripSelect} />
-            </>
-          )}
-        </>
-      )} */}
-    </div>
+          <Route path="faq" element={
+            <div>
+              <Header />
+              <Faq />
+            </div>
+          } />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
