@@ -66,7 +66,7 @@ export default function Header() {
                                 Explore
                             </a>
                             <a href="#" className="navbar-element">
-                                Places
+                                FAQ's
                             </a>
                             <a href="#" className="navbar-element navbar-menu-link" onClick={() => setNavMenuOpen(!navMenuOpen)}>
                                 More
