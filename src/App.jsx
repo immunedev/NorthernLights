@@ -76,25 +76,7 @@ function Background({ children }) {
 }
 
 export default function App() {
-  const [selectedTrip, setSelectedTrip] = useState(null);
-  const [showFinalPage, setShowFinalPage] = useState(false);
-
-  const handleTripSelect = (tripData) => {
-    setSelectedTrip(tripData);
-    setShowFinalPage(false); // Reset showFinalPage when a new trip is selected
-  };
-
-  const handleBackToContent = () => {
-    setSelectedTrip(null);
-    setShowFinalPage(false); // Reset showFinalPage when going back to ContentContainer
-  };
-
-  const handleShowFinalPage = () => {
-    setShowFinalPage(true); 
-  };
-
-  
- 
+   
   return (
     <BrowserRouter>
       <Background>
@@ -104,21 +86,19 @@ export default function App() {
             <Fragment>
               <Lead />
               <SearchBar />
-              <ContentContainer onTripSelect={handleTripSelect} />
+              <ContentContainer />
             </Fragment>
           }>
           <Route path="trip" element={
             <TripPage
-              tripData={selectedTrip}
-              onBackClick={handleBackToContent}
-              onShowFinalPage={handleShowFinalPage}
+              
             />
           } />
           <Route path="final" element={
             <div>
               <FinalPage 
-                tripData={selectedTrip}
-                onBackClick={handleBackToContent} />
+                
+              />
             </div>} />
 
           <Route path="faq" element={

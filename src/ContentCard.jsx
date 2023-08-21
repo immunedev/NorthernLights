@@ -10,7 +10,7 @@ import { ReactComponent as Hotel } from "./assets/hotel1.svg";
 export default function ContentCard({ data, onTripSelect }) {
 
   const handleButtonClick = () => {
-    onTripSelect(data); // Pass the selected trip data to the onTripSelect function
+    
   };
 
   return (
@@ -20,23 +20,23 @@ export default function ContentCard({ data, onTripSelect }) {
 
         <div className='card-content'>
 
-          <div className='card-title'>Lorem Ipsum</div>
+          <div className='card-title'>{data.title}</div>
           <div className='card-details'>
             <div className='card-details-cell'>
               <FlightOut className='icon-32'></FlightOut>
-              <p className='details-text'>Poland, Katowice</p>
+              <p className='details-text'>{data.departure}</p>
             </div>
             <div className='card-details-cell'>
               <DateIcon className='icon-32'></DateIcon>
-              <p className='details-text'>14 days</p>
+              <p className='details-text'>{data.length}</p>
             </div>
             <div className='card-details-cell'>
               <FlightIn className='icon-32'></FlightIn>
-              <p className='details-text'>Norway, Tromso</p>
+              <p className='details-text'>{data.location}</p>
             </div>
             <div className='card-details-cell'>
               <Hotel className='icon-32'></Hotel>
-              <p className='details-text'>Hilton Oslo, Superior room</p>
+              <p className='details-text'>{data.hotel}</p>
             </div>
           </div>
 
@@ -46,8 +46,8 @@ export default function ContentCard({ data, onTripSelect }) {
             </div>
             <div className='card-price-cell'>
               <div className='card-price-text'>
-                <div className='price'>599$</div>
-                <div className='price'>399$</div>
+                <div className='price'>{data.price}</div>
+                <div className='price'>{data.child_price}</div>
                 <div className='sub-price'>Per adult</div>
                 <div className='sub-price'>Per child</div>
               </div>
