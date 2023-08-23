@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { useState, useEffect, Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -82,24 +82,23 @@ export default function App() {
       <Background>
         <Header />
         <Routes>
-          <Route path="/" element={
+          <Route exact path="/" element={
             <Fragment>
               <Lead />
               <SearchBar />
               <ContentContainer />
             </Fragment>
           }>
-          <Route path="trip" element={
+          <Route path="trip/:id" element={
             <TripPage
               
             />
           } />
           <Route path="final" element={
-            <div>
               <FinalPage 
                 
               />
-            </div>} />
+            } />
 
           <Route path="faq" element={
             <Faq />
@@ -110,7 +109,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
-

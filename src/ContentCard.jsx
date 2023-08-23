@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom"
+
 import { ReactComponent as LocationIcon } from "./assets/location.svg";
 import { ReactComponent as DateIcon } from "./assets/date.svg";
 import { ReactComponent as PriceIcon } from "./assets/price.svg";
@@ -51,7 +53,7 @@ export default function ContentCard({ data, onTripSelect }) {
                 <div className='sub-price'>Per adult</div>
                 <div className='sub-price'>Per child</div>
               </div>
-              <button onClick={handleButtonClick} className='card-button'>Check trip</button>
+              <Link to={'trip/' + data.id} className='card-button'>Check trip</Link>
             </div>
           </div>
         </div>

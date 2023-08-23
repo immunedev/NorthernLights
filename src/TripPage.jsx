@@ -6,11 +6,14 @@ import { ReactComponent as BackIcon } from "./assets/backarrow.svg";
 import { ReactComponent as FlightOut } from "./assets/flighttakeof.svg";
 import { ReactComponent as FlightIn } from "./assets/flightland.svg";
 import { ReactComponent as Hotel } from "./assets/hotel1.svg";
+import { tripData } from './data';
 
 
 
-export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
+export default function TripPage(){
 
+    const tripPageData = useParams();
+    tripPageData = tripData.trips[tripPageData.id]
 
     return(
         <div className="trip-container">
@@ -66,7 +69,7 @@ export default function TripPage({tripData, onBackClick, onShowFinalPage  }){
                             </div>
                             <div className="trip-summary-icons">
                                 <DateIcon className='icon-32'></DateIcon>
-                                14 days
+                                {tripPageData.length}
                             </div>
                             <div className="trip-summary-icons">
                                 <Hotel className='icon-32'></Hotel>
