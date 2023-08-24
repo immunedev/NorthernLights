@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams, Link  } from 'react-router-dom';
 import { ReactComponent as LocationIcon } from "./assets/location.svg";
 import { ReactComponent as DateIcon } from "./assets/date.svg";
 import { ReactComponent as PriceIcon } from "./assets/price.svg";
@@ -12,8 +13,12 @@ import { tripData } from './data';
 
 export default function TripPage(){
 
-    const tripPageData = useParams();
-    tripPageData = tripData.trips[tripPageData.id]
+    // const tripPageData = useParams();
+    // tripPageData = tripData.trips[tripPageData.id]
+
+    const { id } = useParams(); 
+    const tripPageData = tripData.trips[id]; 
+
 
     return(
         <div className="trip-container">
@@ -83,8 +88,8 @@ export default function TripPage(){
                                     <div className='sub-price'>Per child</div>
                                 </div>
                                 <div className="trip-buttons">
-                                    <button className='card-button'>Check trip</button>
-                                    <button className='card-button trip-button'>Check trip</button>
+                                    <Link to='/final' className='card-button'>Check trip</Link>
+                                    <Link to='/final' className='card-button trip-button'>Check trip</Link>
                                 </div>
                             </div>
                         </div>

@@ -78,34 +78,23 @@ function Background({ children }) {
 export default function App() {
    
   return (
-    <BrowserRouter>
       <Background>
         <Header />
         <Routes>
-          <Route exact path="/" element={
-            <Fragment>
-              <Lead />
-              <SearchBar />
-              <ContentContainer />
-            </Fragment>
-          }>
-          <Route path="trip/:id" element={
-            <TripPage
-              
-            />
-          } />
-          <Route path="final" element={
-              <FinalPage 
-                
-              />
-            } />
 
-          <Route path="faq" element={
-            <Faq />
-          } />
-          </Route>
+          <Route path="/" 
+            element={
+              <Fragment>
+                <Lead />
+                <SearchBar />
+                <ContentContainer />
+              </Fragment>
+            }/>
+          <Route path="/trip/:id" element={ <TripPage/> }/>
+          <Route path="/final" element={ <FinalPage/> }/>
+          <Route path="/faq" element={ <Faq /> }/>
+
         </Routes>
       </Background>
-    </BrowserRouter>
   );
 }
