@@ -70,7 +70,7 @@ export default function TripPage(){
                             <div className="trip-summary-title">Trip summary</div>
                             <div className="trip-summary-icons">
                                 <FlightOut className='icon-32'></FlightOut>
-                                Poland, Warsaw
+                                {tripPageData.departure}
                             </div>
                             <div className="trip-summary-icons">
                                 <DateIcon className='icon-32'></DateIcon>
@@ -78,18 +78,18 @@ export default function TripPage(){
                             </div>
                             <div className="trip-summary-icons">
                                 <Hotel className='icon-32'></Hotel>
-                                Hilton Oslo, Superior room
+                                {tripPageData.hotel}
                             </div>
                             <div className='card-price-cell trip-price-cell'>
                                 <div className='card-price-text trip-price-text'>
-                                    <div className='price'>599$</div>
-                                    <div className='price'>399$</div>
+                                    <div className='price'>{tripPageData.price}</div>
+                                    <div className='price'>{tripPageData.child_price}</div>
                                     <div className='sub-price trip-sub-price'>Per adult</div>
                                     <div className='sub-price'>Per child</div>
                                 </div>
                                 <div className="trip-buttons">
-                                    <Link to='/final' className='card-button'>Check trip</Link>
-                                    <Link to='/final' className='card-button trip-button'>Check trip</Link>
+                                    <Link to='/final' className='card-button'>Finalize</Link>
+                                    <Link to='/final' className='card-button trip-button'>Lorem Ipsum</Link>
                                 </div>
                             </div>
                         </div>

@@ -9,6 +9,7 @@ import TripPage from './TripPage';
 import FinalPage from './FinalPage';
 import Lead from './Lead';
 import Faq from './Faq';
+import ErrorPage from './Error';
 
 
 function Background({ children }) {
@@ -93,6 +94,7 @@ export default function App() {
           <Route path="/trip/:id" element={ <TripPage/> }/>
           <Route path="/final" element={ <FinalPage/> }/>
           <Route path="/faq" element={ <Faq /> }/>
+          <Route path="/error" element={ <ErrorPage/> }/>
 
         </Routes>
       </Background>
