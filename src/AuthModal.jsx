@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import { ReactComponent as CloseIcon } from "./assets/close.svg";
 
 function ModalFormRegister() {
     return (
@@ -72,7 +73,9 @@ function AuthModalContent({onClose}) {
                 <div className="modal-header">
                     <span className="modal-header-text">{modalTab == ModalTabs.LOGIN ? "Login" : "Register"}</span>
                     <a href="#" onClick={() => setModalTab((modalTab == ModalTabs.LOGIN ? ModalTabs.REGISTER : ModalTabs.LOGIN))} className="modal-header-alternative">{modalTab == ModalTabs.LOGIN ? "Register" : "Login"}</a>
-                    <a href="#" onClick={onClose}>(close icon)</a>
+                    <a href="#" onClick={onClose}>
+                        <CloseIcon className="close-icon"></CloseIcon>
+                    </a>
                 </div>
                 {modalTab == ModalTabs.LOGIN ? <ModalFormLogin /> : <ModalFormRegister />}
             </div>
