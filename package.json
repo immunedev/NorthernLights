@@ -2,7 +2,7 @@
   "name": "northernlights",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://immunedev.github.io/NorthernLights",
+  "homepage": "https://immunedev.github.io/NorthernLights/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
