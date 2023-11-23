@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_amenities_amonities",
+  "info": {
+    "displayName": "amonity",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "amonity": {
+      "type": "string"
+    }
+  }
+}

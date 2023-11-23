@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trips",
+  "info": {
+    "singularName": "trip",
+    "pluralName": "trips",
+    "displayName": "Trip",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Trip_Title": {
+      "type": "string"
+    },
+    "Trip_Description": {
+      "type": "text"
+    },
+    "Flight_From": {
+      "type": "string"
+    },
+    "Flight_to": {
+      "type": "string"
+    },
+    "How_long": {
+      "type": "string"
+    },
+    "Hotel": {
+      "type": "string"
+    },
+    "Price_Adult": {
+      "type": "string"
+    },
+    "Price_child": {
+      "type": "string"
+    },
+    "Main_Photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Side_photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Amenities": {
+      "type": "dynamiczone",
+      "components": [
+        "amenities.amonity"
+      ]
+    },
+    "TripID": {
+      "type": "uid"
+    }
+  }
+}
