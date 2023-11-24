@@ -54,7 +54,7 @@ export default function ContentCard({ data, onTripSelect }) {
                 <div className='sub-price'>Per adult</div>
                 <div className='sub-price'>Per child</div>
               </div>
-              <Link to={'trip/' + data.TripID} className='card-button'>Check trip</Link>
+              <Link to={'trip/' + data.id} className='card-button'>Check trip</Link>
             </div>
           </div>
         </div>
