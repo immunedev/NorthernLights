@@ -62,10 +62,10 @@ export default function Header() {
 
                     <div className="navbar-content">
                         <div className="navbar-elements">
-                            <a href="/demos/nl/" className="navbar-element">
+                            <a href="/" className="navbar-element">
                                 Explore
                             </a>
-                            <a href="/demos/nl/faq" className="navbar-element">
+                            <a href="/faq" className="navbar-element">
                                 FAQ's
                             </a>
                             <a href="#" className="navbar-element navbar-menu-link" onClick={() => setNavMenuOpen(!navMenuOpen)}>

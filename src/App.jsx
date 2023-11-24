@@ -83,7 +83,7 @@ export default function App() {
         <Header />
         <Routes>
 
-          <Route path="/demos/nl/" 
+          <Route path="/" 
             element={
               <Fragment>
                 <Lead />
@@ -91,10 +91,10 @@ export default function App() {
                 <ContentContainer />
               </Fragment>
             }/>
-          <Route path="/demos/nl/trip/:id" element={ <TripPage/> }/>
-          <Route path="/demos/nl/final" element={ <FinalPage/> }/>
-          <Route path="/demos/nl/faq" element={ <Faq /> }/>
-          <Route path="/demos/nl/error" element={ <ErrorPage/> }/>
+          <Route path="/trip/:id" element={ <TripPage/> }/>
+          <Route path="/final" element={ <FinalPage/> }/>
+          <Route path="/faq" element={ <Faq /> }/>
+          <Route path="/error" element={ <ErrorPage/> }/>
 
         </Routes>
       </Background>
