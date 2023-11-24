@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ContentCard from './ContentCard';
+import tripData from "data.jsx"
 
 export default function ContentContainer({ onTripSelect }) {
   const [apiData, setApiData] = useState({ data: [] });
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,8 +34,11 @@ export default function ContentContainer({ onTripSelect }) {
   return (
     <div className='content-container'>
       <div className="content-box" >
-        {apiData.data.map((trip) => (
+        {/* {apiData.data.map((trip) => (
           <ContentCard key={trip.id} data={trip.attributes} onTripSelect={onTripSelect}/>
+        ))} */}
+        {tripData.trips.map((trip) => (
+          <ContentCard key={trip.id} data={trip} onTripSelect={onTripSelect}/>
         ))}
       </div>
     </div>

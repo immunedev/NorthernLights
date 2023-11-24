@@ -9,6 +9,7 @@ import { ReactComponent as FlightIn } from "./assets/flightland.svg";
 import { ReactComponent as Hotel } from "./assets/hotel1.svg";
 
 
+
 export default function ContentCard({ data, onTripSelect }) {
 
   const handleButtonClick = () => {
