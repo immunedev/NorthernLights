@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ContentCard from './ContentCard';
-import tripData from "./data.jsx"
+import { tripData } from "./data.jsx"
 
 export default function ContentContainer({ onTripSelect }) {
   const [apiData, setApiData] = useState({ data: [] });
