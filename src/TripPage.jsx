@@ -88,8 +88,8 @@ export default function TripPage(){
                                     <div className='sub-price'>Per child</div>
                                 </div>
                                 <div className="trip-buttons">
-                                    <Link to='/final' className='card-button'>Finalize</Link>
-                                    <Link to='/final' className='card-button trip-button'>Lorem Ipsum</Link>
+                                    <Link to='/demos/nl/final' className='card-button'>Finalize</Link>
+                                    <Link to='/demos/nl/final' className='card-button trip-button'>Lorem Ipsum</Link>
                                 </div>
                             </div>
                         </div>
