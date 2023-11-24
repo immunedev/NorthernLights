@@ -83,7 +83,7 @@ export default function App() {
         <Header />
         <Routes>
 
-          <Route path="/" 
+          <Route path="/demos/nl/" 
             element={
               <Fragment>
                 <Lead />
