@@ -45,6 +45,10 @@ function Background({ children }) {
     document.querySelector(".star-container").style.transform = `translate(${move.x}px, ${move.y}px)`;
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="page">
       <div className="page-bg">

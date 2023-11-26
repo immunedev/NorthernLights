@@ -26,6 +26,10 @@ export default function FinalPage({ tripData, onBackClick }) {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     let intervalId;
 
     if (thankYouPopup) {

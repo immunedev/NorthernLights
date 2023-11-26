@@ -19,6 +19,10 @@ export default function TripPage(){
     const { id } = useParams(); 
     const tripPageData = tripData.trips[id]; 
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
 
     return(
         <div className="trip-container">
