@@ -79,24 +79,43 @@ function Background({ children }) {
 export default function App() {
    
   return (
+      // <Background>
+      //   <Header />
+      //   <Routes>
+
+      //     <Route path="/" 
+      //       element={
+      //         <Fragment>
+      //           <Lead />
+      //           <SearchBar />
+      //           <ContentContainer />
+      //         </Fragment>
+      //       }/>
+      //     <Route path="/trip/:id" element={ <TripPage/> }/>
+      //     <Route path="/final" element={ <FinalPage/> }/>
+      //     <Route path="/faq" element={ <Faq /> }/>
+      //     <Route path="/error" element={ <ErrorPage/> }/>
+
+      //   </Routes>
+      // </Background>
       <Background>
-        <Header />
-        <Routes>
+      <Header />
+      <Routes>
 
-          <Route path="/demos/nl/" 
-            element={
-              <Fragment>
-                <Lead />
-                <SearchBar />
-                <ContentContainer />
-              </Fragment>
-            }/>
-          <Route path="/demos/nl/trip/:id" element={ <TripPage/> }/>
-          <Route path="/demos/nl/final" element={ <FinalPage/> }/>
-          <Route path="/demos/nl/faq" element={ <Faq /> }/>
-          <Route path="/demos/nl/error" element={ <ErrorPage/> }/>
+        <Route path="/demos/nl/" 
+          element={
+            <Fragment>
+              <Lead />
+              <SearchBar />
+              <ContentContainer />
+            </Fragment>
+          }/>
+        <Route path="/demos/nl/trip/:id" element={ <TripPage/> }/>
+        <Route path="/demos/nl/final" element={ <FinalPage/> }/>
+        <Route path="/demos/nl/faq" element={ <Faq /> }/>
+        <Route path="/demos/nl/error" element={ <ErrorPage/> }/>
 
-        </Routes>
-      </Background>
+      </Routes>
+    </Background>
   );
 }

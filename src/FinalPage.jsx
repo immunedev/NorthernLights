@@ -64,6 +64,7 @@ export default function FinalPage({ tripData, onBackClick }) {
     const isPhoneValid = phonePattern.test(phone) && phone.length >= 7; 
   
     setFormValid(isFormValid && isEmailValid && isPhoneValid);
+    console.log(formValid)
   };
 
   const handlePayClick = () => {
@@ -74,6 +75,9 @@ export default function FinalPage({ tripData, onBackClick }) {
   React.useEffect(() => {
     validateForm();
   }, [formData]);
+
+
+
 
   return (
     <div className={`final-page-container ${showPopup ? "blurred" : ""}`}>
@@ -175,8 +179,7 @@ export default function FinalPage({ tripData, onBackClick }) {
           <button 
             className={`button-summary ${formValid ? "" : "inactive"}`}
             onClick={formValid ? handlePayClick : undefined}
-            form='test'
-            type='submit'>
+            >
                 Pay
           </button>
         </div>
